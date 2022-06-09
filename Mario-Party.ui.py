@@ -8,12 +8,12 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from src.Mario_Party import *
+
 
 class Ui_MarioParty(object):
     def setupUi(self, MarioParty):
         MarioParty.setObjectName("MarioParty")
-        MarioParty.resize(825, 600)
+        MarioParty.resize(825, 694)
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("img/mario-logo.jpeg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MarioParty.setWindowIcon(icon)
@@ -92,6 +92,86 @@ class Ui_MarioParty(object):
 "padding: 10px;")
         self.retorno.setWordWrap(True)
         self.retorno.setObjectName("retorno")
+        self.origem = QtWidgets.QComboBox(self.centralwidget)
+        self.origem.setGeometry(QtCore.QRect(360, 540, 91, 41))
+        self.origem.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.origem.setStyleSheet("background-color: rgb(93, 211, 158);\n"
+"font: 75 15pt \"Noto Sans CJK HK\";")
+        self.origem.setObjectName("origem")
+        self.origem.addItem("")
+        self.origem.addItem("")
+        self.origem.addItem("")
+        self.origem.addItem("")
+        self.origem.addItem("")
+        self.origem.addItem("")
+        self.origem.addItem("")
+        self.origem.addItem("")
+        self.origem.addItem("")
+        self.origem.addItem("")
+        self.origem.addItem("")
+        self.origem.addItem("")
+        self.origem.addItem("")
+        self.origem.addItem("")
+        self.origem.addItem("")
+        self.origem.addItem("")
+        self.origem.addItem("")
+        self.origem.addItem("")
+        self.origem.addItem("")
+        self.origem.addItem("")
+        self.origem.addItem("")
+        self.origem.addItem("")
+        self.origem.addItem("")
+        self.origem.addItem("")
+        self.origem.addItem("")
+        self.origem_label = QtWidgets.QLabel(self.centralwidget)
+        self.origem_label.setGeometry(QtCore.QRect(370, 590, 71, 31))
+        self.origem_label.setStyleSheet("font: 75 10pt \"Noto Sans CJK HK\";\n"
+"color: rgb(255, 255, 255);\n"
+"background-color: rgb(52, 138, 167);\n"
+"padding: 2px;")
+        self.origem_label.setAlignment(QtCore.Qt.AlignCenter)
+        self.origem_label.setWordWrap(True)
+        self.origem_label.setObjectName("origem_label")
+        self.destino = QtWidgets.QComboBox(self.centralwidget)
+        self.destino.setGeometry(QtCore.QRect(700, 540, 91, 41))
+        self.destino.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.destino.setStyleSheet("background-color: rgb(93, 211, 158);\n"
+"font: 75 15pt \"Noto Sans CJK HK\";")
+        self.destino.setObjectName("destino")
+        self.destino.addItem("")
+        self.destino.addItem("")
+        self.destino.addItem("")
+        self.destino.addItem("")
+        self.destino.addItem("")
+        self.destino.addItem("")
+        self.destino.addItem("")
+        self.destino.addItem("")
+        self.destino.addItem("")
+        self.destino.addItem("")
+        self.destino.addItem("")
+        self.destino.addItem("")
+        self.destino.addItem("")
+        self.destino.addItem("")
+        self.destino.addItem("")
+        self.destino.addItem("")
+        self.destino.addItem("")
+        self.destino.addItem("")
+        self.destino.addItem("")
+        self.destino.addItem("")
+        self.destino.addItem("")
+        self.destino.addItem("")
+        self.destino.addItem("")
+        self.destino.addItem("")
+        self.destino.addItem("")
+        self.destino_label = QtWidgets.QLabel(self.centralwidget)
+        self.destino_label.setGeometry(QtCore.QRect(710, 590, 71, 31))
+        self.destino_label.setStyleSheet("font: 75 10pt \"Noto Sans CJK HK\";\n"
+"color: rgb(255, 255, 255);\n"
+"background-color: rgb(52, 138, 167);\n"
+"padding: 2px;")
+        self.destino_label.setAlignment(QtCore.Qt.AlignCenter)
+        self.destino_label.setWordWrap(True)
+        self.destino_label.setObjectName("destino_label")
         MarioParty.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MarioParty)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 825, 20))
@@ -103,8 +183,6 @@ class Ui_MarioParty(object):
 
         self.retranslateUi(MarioParty)
         QtCore.QMetaObject.connectSlotsByName(MarioParty)
-
-        self.setButtonsAction()
 
     def retranslateUi(self, MarioParty):
         _translate = QtCore.QCoreApplication.translate
@@ -119,14 +197,58 @@ class Ui_MarioParty(object):
         self.aprofundamento_interativo.setText(_translate("MarioParty", "Aprofundamento\n"
 "Interativo"))
         self.retorno.setText(_translate("MarioParty", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages."))
-
-    def setButtonsAction(self):
-        self.amplitude.clicked.connect(self.amplitude_clicked)
-
-    def amplitude_clicked(self):
-        solucao = 'Solução: '
-        solucao += '[ ' + ', '.join(busca().amplitude("A", "O")) + ' ]'
-        self.retorno.setText(solucao)
+        self.origem.setItemText(0, _translate("MarioParty", "A"))
+        self.origem.setItemText(1, _translate("MarioParty", "B"))
+        self.origem.setItemText(2, _translate("MarioParty", "C"))
+        self.origem.setItemText(3, _translate("MarioParty", "D"))
+        self.origem.setItemText(4, _translate("MarioParty", "E"))
+        self.origem.setItemText(5, _translate("MarioParty", "F"))
+        self.origem.setItemText(6, _translate("MarioParty", "G"))
+        self.origem.setItemText(7, _translate("MarioParty", "H"))
+        self.origem.setItemText(8, _translate("MarioParty", "I"))
+        self.origem.setItemText(9, _translate("MarioParty", "J"))
+        self.origem.setItemText(10, _translate("MarioParty", "K"))
+        self.origem.setItemText(11, _translate("MarioParty", "L"))
+        self.origem.setItemText(12, _translate("MarioParty", "M"))
+        self.origem.setItemText(13, _translate("MarioParty", "N"))
+        self.origem.setItemText(14, _translate("MarioParty", "O"))
+        self.origem.setItemText(15, _translate("MarioParty", "P"))
+        self.origem.setItemText(16, _translate("MarioParty", "Q"))
+        self.origem.setItemText(17, _translate("MarioParty", "S"))
+        self.origem.setItemText(18, _translate("MarioParty", "T"))
+        self.origem.setItemText(19, _translate("MarioParty", "U"))
+        self.origem.setItemText(20, _translate("MarioParty", "V"))
+        self.origem.setItemText(21, _translate("MarioParty", "W"))
+        self.origem.setItemText(22, _translate("MarioParty", "X"))
+        self.origem.setItemText(23, _translate("MarioParty", "Y"))
+        self.origem.setItemText(24, _translate("MarioParty", "Z"))
+        self.origem_label.setText(_translate("MarioParty", "Origem"))
+        self.destino.setItemText(0, _translate("MarioParty", "A"))
+        self.destino.setItemText(1, _translate("MarioParty", "B"))
+        self.destino.setItemText(2, _translate("MarioParty", "C"))
+        self.destino.setItemText(3, _translate("MarioParty", "D"))
+        self.destino.setItemText(4, _translate("MarioParty", "E"))
+        self.destino.setItemText(5, _translate("MarioParty", "F"))
+        self.destino.setItemText(6, _translate("MarioParty", "G"))
+        self.destino.setItemText(7, _translate("MarioParty", "H"))
+        self.destino.setItemText(8, _translate("MarioParty", "I"))
+        self.destino.setItemText(9, _translate("MarioParty", "J"))
+        self.destino.setItemText(10, _translate("MarioParty", "K"))
+        self.destino.setItemText(11, _translate("MarioParty", "L"))
+        self.destino.setItemText(12, _translate("MarioParty", "M"))
+        self.destino.setItemText(13, _translate("MarioParty", "N"))
+        self.destino.setItemText(14, _translate("MarioParty", "O"))
+        self.destino.setItemText(15, _translate("MarioParty", "P"))
+        self.destino.setItemText(16, _translate("MarioParty", "Q"))
+        self.destino.setItemText(17, _translate("MarioParty", "S"))
+        self.destino.setItemText(18, _translate("MarioParty", "T"))
+        self.destino.setItemText(19, _translate("MarioParty", "U"))
+        self.destino.setItemText(20, _translate("MarioParty", "V"))
+        self.destino.setItemText(21, _translate("MarioParty", "W"))
+        self.destino.setItemText(22, _translate("MarioParty", "X"))
+        self.destino.setItemText(23, _translate("MarioParty", "Y"))
+        self.destino.setItemText(24, _translate("MarioParty", "Z"))
+        self.destino_label.setText(_translate("MarioParty", "Destino"))
 
 
 if __name__ == "__main__":
