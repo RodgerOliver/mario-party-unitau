@@ -118,7 +118,6 @@ class lista(object):
         return caminho
 
 class busca(object):
-
     # BUSCA EM AMPLITUDE
     def amplitude(self, inicio, fim):
 
@@ -182,7 +181,6 @@ class busca(object):
                         return caminho
 
         return "caminho não encontrado"
-
 
     # BUSCA EM PROFUNDIDADE
     def profundidade(self, inicio, fim):
@@ -310,7 +308,6 @@ class busca(object):
                             #print("\nÁrvore de busca:\n",l2.exibeLista())
                             return caminho
         return "caminho não encontrado"
-
 
     # BUSCA EM APROFUNDAMENTO ITERATIVO
     def aprof_iterativo(self, inicio, fim, max_lim):
@@ -514,7 +511,6 @@ class busca(object):
 
         return "caminho não encontrado"
 
-
 """
 ********************************************************************
                      PROBLEMA: MAPA DA ROMÊNIA
@@ -549,46 +545,7 @@ grafo = [
         ["VASLUI", "HIRSOVA", "BUCARESTE"],
         ["URZICENI", "IASI"],
         ["ORADEA", "ARAD"]
-        ]
-
-
-"""
-********************************************************************
-                     PROBLEMA: VALE DO PARAÍBA
-********************************************************************
-
-
-nos = ["Ap","Ca","Cg","CJ","CP","Cr","Gu","Ja","Jc","Lo","ML",
-       "NS","Pa","Pi","Ro","RS","SA","SJ","SL","Ta","Tr","Ub"]
-
-# ORDEM DECRESCENTE
-grafo = [
-            ["Ro","Gu"],
-            ["Ja","SJ","Ta"],
-            ["Pa","Ub"],
-            ["SA","Ta","Tr"],
-            ["Cr","Lo"],
-            ["CP"],
-            ["Ap","Lo"],
-            ["Ca","Pa","SJ"],
-            ["SJ"],
-            ["CP","Gu"],
-            ["SA","SJ"],
-            ["RS","SL"],
-            ["Cg","Ja","SJ"],
-            ["Ro","Ta","Tr"],
-            ["Pi","Ap"],
-            ["NS","SL","Ta"],
-            ["CJ","ML","Ta","Tr"],
-            ["Ca","Jc","ML","Pa","Ja"],
-            ["Ub","Ta","NS","RS"],
-            ["Ca","Tr","Pi","RS","CJ","SL","SA"],
-            ["Ta","CJ","Pi","SA"],
-            ["SL","Cg"]
-
-       ]
-"""
-
+]
 
 # PROGRAMA PRINCIPAL
 
