@@ -212,7 +212,7 @@ Interativo</string>
      <string notr="true">buttonGroup</string>
     </attribute>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="retorno">
     <property name="geometry">
      <rect>
       <x>30</x>

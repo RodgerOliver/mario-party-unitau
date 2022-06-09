@@ -84,13 +84,13 @@ class Ui_MarioParty(object):
 "color: rgb(255, 255, 255);")
         self.aprofundamento_interativo.setObjectName("aprofundamento_interativo")
         self.buttonGroup.addButton(self.aprofundamento_interativo)
-        self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(30, 260, 291, 271))
-        self.label.setStyleSheet("font: 75 10pt \"Noto Sans CJK HK\";\n"
+        self.retorno = QtWidgets.QLabel(self.centralwidget)
+        self.retorno.setGeometry(QtCore.QRect(30, 260, 291, 271))
+        self.retorno.setStyleSheet("font: 75 10pt \"Noto Sans CJK HK\";\n"
 "color: rgb(255, 255, 255);\n"
 "background-color: rgb(52, 138, 167);")
-        self.label.setWordWrap(True)
-        self.label.setObjectName("label")
+        self.retorno.setWordWrap(True)
+        self.retorno.setObjectName("retorno")
         MarioParty.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MarioParty)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 825, 20))
@@ -115,7 +115,7 @@ class Ui_MarioParty(object):
         self.bidirecional.setText(_translate("MarioParty", "Bidirecional"))
         self.aprofundamento_interativo.setText(_translate("MarioParty", "Aprofundamento\n"
 "Interativo"))
-        self.label.setText(_translate("MarioParty", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages."))
+        self.retorno.setText(_translate("MarioParty", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages."))
 
 
 if __name__ == "__main__":
