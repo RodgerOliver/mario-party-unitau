@@ -180,7 +180,8 @@ class busca(object):
                         #print("\nÁrvore de busca:\n",l2.exibeLista())
                         return caminho
 
-        return []
+        return "caminho não encontrado"
+
 
     # BUSCA EM PROFUNDIDADE
     def profundidade(self, inicio, fim):
@@ -513,6 +514,78 @@ class busca(object):
 
 """
 ********************************************************************
+                     PROBLEMA: MAPA DA ROMÊNIA
+********************************************************************
+
+nos = ["ARAD", "BUCARESTE", "CRAIOVA", "DOBRETA",
+        "EFORIE", "FAGARAS", "GIORGIU", "HIRSOVA",
+        "IASI", "LUGOJ", "MEHADIA", "NEAMT", "ORADEA",
+        "PITESTI", "RIMNICU VILCEA", "SIBIU", "TIMISOARA",
+        "URZICENI", "VASLUI", "ZERIND"]
+
+# ORDEM DECRESCENTE
+grafo = [
+        ["ZERIND", "TIMISOARA", "SIBIU"],
+        ["URZICENI", "PITESTI", "GIORGIU", "FAGARAS"],
+        ["RIMNICU VILCEA", "PITESTI", "DOBRETA"],
+        ["MEHADIA", "CRAIOVA"],
+        ["HIRSOVA"],
+        ["SIBIU", "BUCARESTE"],
+        ["BUCARESTE"],
+        ["URZICENI", "EFORIE"],
+        ["VASLUI", "NEAMT"],
+        ["TIMISOARA", "MEHADIA"],
+        ["LUGOJ", "DOBRETA"],
+        ["IASI"],
+        ["ZERIND", "SIBIU"],
+        ["RIMNICU VILCEA", "CRAIOVA", "BUCARESTE"],
+        ["SIBIU", "PITESTI", "CRAIOVA"],
+        ["RIMNICU VILCEA", "ORADEA", "FAGARAS", "ARAD"],
+        ["LUGOJ", "ARAD"],
+        ["VASLUI", "HIRSOVA", "BUCARESTE"],
+        ["URZICENI", "IASI"],
+        ["ORADEA", "ARAD"]
+        ]
+
+
+********************************************************************
+                     PROBLEMA: VALE DO PARAÍBA
+********************************************************************
+
+
+nos = ["Ap","Ca","Cg","CJ","CP","Cr","Gu","Ja","Jc","Lo","ML",
+       "NS","Pa","Pi","Ro","RS","SA","SJ","SL","Ta","Tr","Ub"]
+
+# ORDEM DECRESCENTE
+grafo = [
+            ["Ro","Gu"],
+            ["Ja","SJ","Ta"],
+            ["Pa","Ub"],
+            ["SA","Ta","Tr"],
+            ["Cr","Lo"],
+            ["CP"],
+            ["Ap","Lo"],
+            ["Ca","Pa","SJ"],
+            ["SJ"],
+            ["CP","Gu"],
+            ["SA","SJ"],
+            ["RS","SL"],
+            ["Cg","Ja","SJ"],
+            ["Ro","Ta","Tr"],
+            ["Pi","Ap"],
+            ["NS","SL","Ta"],
+            ["CJ","ML","Ta","Tr"],
+            ["Ca","Jc","ML","Pa","Ja"],
+            ["Ub","Ta","NS","RS"],
+            ["Ca","Tr","Pi","RS","CJ","SL","SA"],
+            ["Ta","CJ","Pi","SA"],
+            ["SL","Cg"]
+
+       ]
+"""
+
+"""
+********************************************************************
                      PROBLEMA: MARIO PARTY
 ********************************************************************
 """
@@ -559,9 +632,10 @@ grafo = [
 sol = busca()
 caminho = []
 
-# DEFINIÇÃO DO PROBLEMA
-origem  = "A"
-destino = "O"
+# DEFINIÇÃO DO PROBLEMA (Romênia)
+# origem, destino  = "ARAD", "LUGOJ"
+# DEFINIÇÃO DO PROBLEMA (Mario Party)
+origem, destino  = "A", "O"
 
 caminho = sol.amplitude(origem,destino)
 print("\n*****AMPLITUDE*****\n",caminho)

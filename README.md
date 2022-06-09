@@ -15,5 +15,5 @@ cd /usr/lib/x86_64-linux-gnu/qt5/bin/
 ### Converter UI em PY
 
 ```sh
-pyuic5 -x Mario-Party.ui -o Mario-Party.ui.py
+pyuic5 Mario_Party.ui -o Mario_Party_ui.py
 ```
