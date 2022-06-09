@@ -7,8 +7,10 @@
 # WARNING! All changes made in this file will be lost!
 
 
+from array import array
+from ast import If
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from src.Mario_Party import *
 
 class Ui_MarioParty(object):
     def setupUi(self, MarioParty):
@@ -183,6 +185,7 @@ class Ui_MarioParty(object):
 
         self.retranslateUi(MarioParty)
         QtCore.QMetaObject.connectSlotsByName(MarioParty)
+        self.setButtonsAction()
 
     def retranslateUi(self, MarioParty):
         _translate = QtCore.QCoreApplication.translate
@@ -196,7 +199,7 @@ class Ui_MarioParty(object):
         self.bidirecional.setText(_translate("MarioParty", "Bidirecional"))
         self.aprofundamento_interativo.setText(_translate("MarioParty", "Aprofundamento\n"
 "Interativo"))
-        self.retorno.setText(_translate("MarioParty", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages."))
+        self.retorno.setText(_translate("MarioParty", "O retorno da solução aparecerá aqui!"))
         self.origem.setItemText(0, _translate("MarioParty", "A"))
         self.origem.setItemText(1, _translate("MarioParty", "B"))
         self.origem.setItemText(2, _translate("MarioParty", "C"))
@@ -250,6 +253,46 @@ class Ui_MarioParty(object):
         self.destino.setItemText(24, _translate("MarioParty", "Z"))
         self.destino_label.setText(_translate("MarioParty", "Destino"))
 
+    def setButtonsAction(self):
+        self.amplitude.clicked.connect(self.amplitude_clicked)
+        self.profundidade.clicked.connect(self.profundidade_clicked)
+        self.profundidade_limitada_l2.clicked.connect(self.profundidade_limitada_l2_clicked)
+        self.profundidade_limitada_l6.clicked.connect(self.profundidade_limitada_l6_clicked)
+        self.aprofundamento_interativo.clicked.connect(self.aprofundamento_interativo_clicked)
+        self.bidirecional.clicked.connect(self.bidirecional_clicked)
+
+    def amplitude_clicked(self):
+        self.button_clicked(busca().amplitude(origem, destino))
+
+    def profundidade_clicked(self):
+        self.button_clicked(busca().profundidade(origem, destino))
+
+    def profundidade_limitada_l2_clicked(self):
+        self.button_clicked(busca().prof_limitada(origem, destino, 2))
+
+    def profundidade_limitada_l6_clicked(self):
+        self.button_clicked(busca().prof_limitada(origem, destino, 6))
+
+    def aprofundamento_interativo_clicked(self):
+        self.button_clicked(busca().aprof_iterativo(origem, destino, 6))
+
+    def bidirecional_clicked(self):
+        self.button_clicked(busca().bidirecional(origem, destino))
+
+    def button_clicked(self, array_solucao):
+        origem = str(self.origem.currentText())
+        destino = str(self.destino.currentText())
+        if origem == destino:
+            self.retorno.setText('A origem e o destino devem ser diferentes.')
+            return
+
+        if array_solucao == []:
+            self.retorno.setText('Solução não encontrada.')
+            return
+
+        solucao = 'Solução: '
+        solucao += '[ ' + ', '.join(array_solucao) + ' ]'
+        self.retorno.setText(solucao)
 
 if __name__ == "__main__":
     import sys

@@ -180,7 +180,7 @@ class busca(object):
                         #print("\nÁrvore de busca:\n",l2.exibeLista())
                         return caminho
 
-        return "caminho não encontrado"
+        return []
 
     # BUSCA EM PROFUNDIDADE
     def profundidade(self, inicio, fim):
@@ -243,7 +243,7 @@ class busca(object):
                         #print("Fila:\n",l1.exibeLista())
                         #print("\nÁrvore de busca:\n",l2.exibeLista())
                         return caminho
-        return "caminho não encontrado"
+        return []
 
     # BUSCA EM PROFUNDIDADE LIMITADA
     def prof_limitada(self, inicio, fim, limite):
@@ -307,7 +307,7 @@ class busca(object):
                             #print("Fila:\n",l1.exibeLista())
                             #print("\nÁrvore de busca:\n",l2.exibeLista())
                             return caminho
-        return "caminho não encontrado"
+        return []
 
     # BUSCA EM APROFUNDAMENTO ITERATIVO
     def aprof_iterativo(self, inicio, fim, max_lim):
@@ -372,7 +372,7 @@ class busca(object):
                                 #print("Fila:\n",l1.exibeLista())
                                 #print("\nÁrvore de busca:\n",l2.exibeLista())
                                 return caminho
-        return "caminho não encontrado"
+        return []
 
     # BUSCA EM AMPLITUDE
     def bidirecional(self, inicio, fim):
@@ -509,7 +509,7 @@ class busca(object):
 
                 primeiro=False
 
-        return "caminho não encontrado"
+        return []
 
 """
 ********************************************************************
