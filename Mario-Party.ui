@@ -70,7 +70,7 @@ color: rgb(255, 255, 255);</string>
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="imPath">
+   <widget class="QLabel" name="imgPath">
     <property name="geometry">
      <rect>
       <x>360</x>
@@ -224,7 +224,8 @@ Interativo</string>
     <property name="styleSheet">
      <string notr="true">font: 75 10pt &quot;Noto Sans CJK HK&quot;;
 color: rgb(255, 255, 255);
-background-color: rgb(52, 138, 167);</string>
+background-color: rgb(52, 138, 167);
+padding: 10px;</string>
     </property>
     <property name="text">
      <string>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.</string>
@@ -233,7 +234,7 @@ background-color: rgb(52, 138, 167);</string>
      <bool>true</bool>
     </property>
     <property name="margin">
-     <number>12</number>
+     <number>0</number>
     </property>
    </widget>
   </widget>

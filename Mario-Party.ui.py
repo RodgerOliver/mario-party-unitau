@@ -38,12 +38,12 @@ class Ui_MarioParty(object):
         self.imgCharacterSelect.setPixmap(QtGui.QPixmap("img/character-select.jpeg"))
         self.imgCharacterSelect.setScaledContents(True)
         self.imgCharacterSelect.setObjectName("imgCharacterSelect")
-        self.imPath = QtWidgets.QLabel(self.centralwidget)
-        self.imPath.setGeometry(QtCore.QRect(360, 260, 431, 271))
-        self.imPath.setText("")
-        self.imPath.setPixmap(QtGui.QPixmap("img/path.jpeg"))
-        self.imPath.setScaledContents(True)
-        self.imPath.setObjectName("imPath")
+        self.imgPath = QtWidgets.QLabel(self.centralwidget)
+        self.imgPath.setGeometry(QtCore.QRect(360, 260, 431, 271))
+        self.imgPath.setText("")
+        self.imgPath.setPixmap(QtGui.QPixmap("img/path.jpeg"))
+        self.imgPath.setScaledContents(True)
+        self.imgPath.setObjectName("imgPath")
         self.profundidade = QtWidgets.QPushButton(self.centralwidget)
         self.profundidade.setGeometry(QtCore.QRect(180, 20, 141, 61))
         self.profundidade.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -88,7 +88,8 @@ class Ui_MarioParty(object):
         self.retorno.setGeometry(QtCore.QRect(30, 260, 291, 271))
         self.retorno.setStyleSheet("font: 75 10pt \"Noto Sans CJK HK\";\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(52, 138, 167);")
+"background-color: rgb(52, 138, 167);\n"
+"padding: 10px;")
         self.retorno.setWordWrap(True)
         self.retorno.setObjectName("retorno")
         MarioParty.setCentralWidget(self.centralwidget)
