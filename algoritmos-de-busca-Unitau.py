@@ -513,38 +513,45 @@ class busca(object):
 
 """
 ********************************************************************
-                     PROBLEMA: MAPA DA ROMÊNIA
+                     PROBLEMA: MARIO PARTY
 ********************************************************************
 """
 
-nos = ["ARAD", "BUCARESTE", "CRAIOVA", "DOBRETA",
-        "EFORIE", "FAGARAS", "GIORGIU", "HIRSOVA",
-        "IASI", "LUGOJ", "MEHADIA", "NEAMT", "ORADEA",
-        "PITESTI", "RIMNICU VILCEA", "SIBIU", "TIMISOARA",
-        "URZICENI", "VASLUI", "ZERIND"]
+nos = [
+    "A", "B", "C", "D", "E", "F", "G", "H",
+    "I", "J", "K", "L", "M", "N", "O",
+    "P", "Q", "R", "S", "T", "U", "V",
+    "W", "X", "Y", "Z",
+]
 
-# ORDEM DECRESCENTE
+# ORDEM DESORDENADA
 grafo = [
-        ["ZERIND", "TIMISOARA", "SIBIU"],
-        ["URZICENI", "PITESTI", "GIORGIU", "FAGARAS"],
-        ["RIMNICU VILCEA", "PITESTI", "DOBRETA"],
-        ["MEHADIA", "CRAIOVA"],
-        ["HIRSOVA"],
-        ["SIBIU", "BUCARESTE"],
-        ["BUCARESTE"],
-        ["URZICENI", "EFORIE"],
-        ["VASLUI", "NEAMT"],
-        ["TIMISOARA", "MEHADIA"],
-        ["LUGOJ", "DOBRETA"],
-        ["IASI"],
-        ["ZERIND", "SIBIU"],
-        ["RIMNICU VILCEA", "CRAIOVA", "BUCARESTE"],
-        ["SIBIU", "PITESTI", "CRAIOVA"],
-        ["RIMNICU VILCEA", "ORADEA", "FAGARAS", "ARAD"],
-        ["LUGOJ", "ARAD"],
-        ["VASLUI", "HIRSOVA", "BUCARESTE"],
-        ["URZICENI", "IASI"],
-        ["ORADEA", "ARAD"]
+    ["C", "S", "R", "B"],
+    ["P", "U", "G", "A"],
+    ["D", "Z", "H", "A"],
+    ["S", "R", "F"],
+    ["P", "I", "X", "T"],
+    ["D", "Z", "K", "T", "X"],
+    ["B", "J", "V"],
+    ["C", "K", "Y", "N"],
+    ["E", "J", "U", "L", "M", "X"],
+    ["G", "I", "W"],
+    ["F", "H", "X", "L"],
+    ["N", "I", "K", "X"],
+    ["O", "W", "V", "I"],
+    ["Y", "L", "O", "H"],
+    ["N", "M"],
+    ["B", "Q", "E"],
+    ["R", "T", "P"],
+    ["A", "Q", "D"],
+    ["A", "Z", "C", "D"],
+    ["Q", "F", "E"],
+    ["B", "I", "E"],
+    ["G", "W", "M"],
+    ["J", "V", "M"],
+    ["E", "I", "L", "F", "K"],
+    ["N", "H"],
+    ["S", "C", "F", "D"],
 ]
 
 # PROGRAMA PRINCIPAL
@@ -553,8 +560,8 @@ sol = busca()
 caminho = []
 
 # DEFINIÇÃO DO PROBLEMA
-origem  = "ARAD"
-destino = "LUGOJ"
+origem  = "A"
+destino = "O"
 
 caminho = sol.amplitude(origem,destino)
 print("\n*****AMPLITUDE*****\n",caminho)
@@ -577,4 +584,4 @@ caminho = sol.aprof_iterativo(origem, destino, lim)
 print("\n*****APROFUNDAMENTO ITERATIVO*****\n",caminho)
 
 caminho = sol.bidirecional(origem,destino)
-print("\n*****BDIRECIONAL*****\n",caminho)
+print("\n*****BIDIRECIONAL*****\n",caminho)
