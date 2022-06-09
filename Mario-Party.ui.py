@@ -8,7 +8,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from src.Mario_Party import *
 
 class Ui_MarioParty(object):
     def setupUi(self, MarioParty):
@@ -104,6 +104,8 @@ class Ui_MarioParty(object):
         self.retranslateUi(MarioParty)
         QtCore.QMetaObject.connectSlotsByName(MarioParty)
 
+        self.setButtonsAction()
+
     def retranslateUi(self, MarioParty):
         _translate = QtCore.QCoreApplication.translate
         MarioParty.setWindowTitle(_translate("MarioParty", "Mario Party"))
@@ -117,6 +119,14 @@ class Ui_MarioParty(object):
         self.aprofundamento_interativo.setText(_translate("MarioParty", "Aprofundamento\n"
 "Interativo"))
         self.retorno.setText(_translate("MarioParty", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages."))
+
+    def setButtonsAction(self):
+        self.amplitude.clicked.connect(self.amplitude_clicked)
+
+    def amplitude_clicked(self):
+        solucao = 'Solução: '
+        solucao += '[ ' + ', '.join(busca().amplitude("A", "O")) + ' ]'
+        self.retorno.setText(solucao)
 
 
 if __name__ == "__main__":
