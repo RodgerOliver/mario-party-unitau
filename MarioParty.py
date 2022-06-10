@@ -1,4 +1,5 @@
 from Mario_Party_ui import *
+from PyQt5.QtWidgets import QMessageBox
 from src.busca_local_sem_info import *
 
 class MarioParty(Ui_MarioParty):
@@ -8,6 +9,14 @@ class MarioParty(Ui_MarioParty):
         self.updateInputs()
         self.setButtonsEvents()
         self.setInputsEvents()
+
+    def showError(self, error):
+        print(f"Unexpected {error=}, {type(error)=}")
+        popup = QMessageBox()
+        popup.setWindowTitle('Erro')
+        popup.setText('Ocorreu um erro no algoritmo.')
+        popup.setIcon(QMessageBox.Critical)
+        popup.exec_()
 
     def updateInputs(self):
         self.input_origem = str(self.origem.currentText())
@@ -27,24 +36,39 @@ class MarioParty(Ui_MarioParty):
         self.profundidade_limite.textChanged.connect(self.updateInputs)
 
     def amplitude_clicked(self):
-        self.button_clicked(busca().amplitude(self.input_origem, self.input_destino),
-            'Amplitude')
+        try:
+            self.button_clicked(busca().amplitude(self.input_origem, self.input_destino),
+                'Amplitude')
+        except BaseException as err:
+            self.showError(err)
 
     def profundidade_clicked(self):
-        self.button_clicked(busca().profundidade(self.input_origem, self.input_destino),
-            'Profundidade')
+        try:
+            self.button_clicked(busca().profundidade(self.input_origem, self.input_destino),
+                'Profundidade')
+        except BaseException as err:
+            self.showError(err)
 
     def profundidade_limitada_clicked(self):
-        self.button_clicked(busca().prof_limitada(self.input_origem, self.input_destino, self.input_limite),
-            'Profundidade Limitada')
+        try:
+            self.button_clicked(busca().prof_limitada(self.input_origem, self.input_destino, self.input_limite),
+                'Profundidade Limitada')
+        except BaseException as err:
+            self.showError(err)
 
     def aprofundamento_interativo_clicked(self):
-        self.button_clicked(busca().aprof_iterativo(self.input_origem, self.input_destino, self.input_limite),
-            'Aprofundamento Interativo')
+        try:
+            self.button_clicked(busca().aprof_iterativo(self.input_origem, self.input_destino, self.input_limite),
+                'Aprofundamento Interativo')
+        except BaseException as err:
+            self.showError(err)
 
     def bidirecional_clicked(self):
-        self.button_clicked(busca().bidirecional(self.input_origem, self.input_destino),
-            'Bidirecional')
+        try:
+            self.button_clicked(busca().bidirecional(self.input_origem, self.input_destino),
+                'Bidirecional')
+        except BaseException as err:
+            self.showError(err)
 
     def button_clicked(self, array_solucao, tipo_solucao):
         if self.input_origem == self.input_destino:
