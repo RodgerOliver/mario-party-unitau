@@ -27,22 +27,24 @@
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+	background-color: rgb(143, 57, 133);
+	font: 75 10pt &quot;Noto Sans CJK HK&quot;;
+	color: rgb(255, 255, 255);
+}</string>
+   </property>
    <widget class="QPushButton" name="amplitude">
     <property name="geometry">
      <rect>
       <x>30</x>
       <y>20</y>
       <width>141</width>
-      <height>61</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="cursor">
      <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(143, 57, 133);
-font: 75 10pt &quot;Noto Sans CJK HK&quot;;
-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>Amplitude</string>
@@ -95,16 +97,11 @@ color: rgb(255, 255, 255);</string>
       <x>180</x>
       <y>20</y>
       <width>141</width>
-      <height>61</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="cursor">
      <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(143, 57, 133);
-font: 75 10pt &quot;Noto Sans CJK HK&quot;;
-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>Profundidade</string>
@@ -117,18 +114,13 @@ color: rgb(255, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>180</x>
-      <y>100</y>
+      <y>70</y>
       <width>141</width>
-      <height>61</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="cursor">
      <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(143, 57, 133);
-font: 75 10pt &quot;Noto Sans CJK HK&quot;;
-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>Profundidade
@@ -142,18 +134,13 @@ Limitada L6</string>
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>100</y>
+      <y>70</y>
       <width>141</width>
-      <height>61</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="cursor">
      <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(143, 57, 133);
-font: 75 10pt &quot;Noto Sans CJK HK&quot;;
-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>Profundidade
@@ -167,18 +154,16 @@ Limitada L2</string>
     <property name="geometry">
      <rect>
       <x>180</x>
-      <y>180</y>
+      <y>120</y>
       <width>141</width>
-      <height>61</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="cursor">
      <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(143, 57, 133);
-font: 75 10pt &quot;Noto Sans CJK HK&quot;;
-color: rgb(255, 255, 255);</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>Bidirecional</string>
@@ -191,18 +176,13 @@ color: rgb(255, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>180</y>
+      <y>120</y>
       <width>141</width>
-      <height>61</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="cursor">
      <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(143, 57, 133);
-font: 75 10pt &quot;Noto Sans CJK HK&quot;;
-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>Aprofundamento
