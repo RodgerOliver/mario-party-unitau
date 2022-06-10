@@ -32,6 +32,11 @@
 	background-color: rgb(143, 57, 133);
 	font: 75 10pt &quot;Noto Sans CJK HK&quot;;
 	color: rgb(255, 255, 255);
+}
+
+QComboBox {
+	background-color: rgb(93, 211, 158);
+	font: 75 12pt &quot;Noto Sans CJK HK&quot;;
 }</string>
    </property>
    <widget class="QPushButton" name="amplitude">
@@ -220,18 +225,14 @@ padding: 10px;</string>
    <widget class="QComboBox" name="origem">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>560</y>
-      <width>91</width>
-      <height>41</height>
+      <x>380</x>
+      <y>600</y>
+      <width>51</width>
+      <height>31</height>
      </rect>
     </property>
-    <property name="layoutDirection">
-     <enum>Qt::LeftToRight</enum>
-    </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(93, 211, 158);
-font: 75 15pt &quot;Noto Sans CJK HK&quot;;</string>
+     <string notr="true">background-color: rgb(93, 211, 158);</string>
     </property>
     <item>
      <property name="text">
@@ -363,7 +364,7 @@ font: 75 15pt &quot;Noto Sans CJK HK&quot;;</string>
     <property name="geometry">
      <rect>
       <x>370</x>
-      <y>610</y>
+      <y>560</y>
       <width>71</width>
       <height>31</height>
      </rect>
@@ -390,18 +391,14 @@ padding: 2px;</string>
    <widget class="QComboBox" name="destino">
     <property name="geometry">
      <rect>
-      <x>700</x>
-      <y>560</y>
-      <width>91</width>
-      <height>41</height>
+      <x>460</x>
+      <y>600</y>
+      <width>51</width>
+      <height>31</height>
      </rect>
     </property>
-    <property name="layoutDirection">
-     <enum>Qt::LeftToRight</enum>
-    </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(93, 211, 158);
-font: 75 15pt &quot;Noto Sans CJK HK&quot;;</string>
+     <string notr="true">background-color: rgb(93, 211, 158);</string>
     </property>
     <item>
      <property name="text">
@@ -532,8 +529,8 @@ font: 75 15pt &quot;Noto Sans CJK HK&quot;;</string>
    <widget class="QLabel" name="destino_label">
     <property name="geometry">
      <rect>
-      <x>710</x>
-      <y>610</y>
+      <x>450</x>
+      <y>560</y>
       <width>71</width>
       <height>31</height>
      </rect>
