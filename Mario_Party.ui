@@ -37,6 +37,7 @@
 QComboBox {
 	background-color: rgb(93, 211, 158);
 	font: 75 12pt &quot;Noto Sans CJK HK&quot;;
+	combobox-popup: 0;
 }</string>
    </property>
    <widget class="QPushButton" name="amplitude">
