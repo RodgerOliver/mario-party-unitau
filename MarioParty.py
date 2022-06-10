@@ -10,8 +10,7 @@ class MarioParty(Ui_MarioParty):
     def setButtonsAction(self):
         self.amplitude.clicked.connect(self.amplitude_clicked)
         self.profundidade.clicked.connect(self.profundidade_clicked)
-        self.profundidade_limitada_l2.clicked.connect(self.profundidade_limitada_l2_clicked)
-        self.profundidade_limitada_l6.clicked.connect(self.profundidade_limitada_l6_clicked)
+        self.profundidade_limitada.clicked.connect(self.profundidade_limitada_clicked)
         self.aprofundamento_interativo.clicked.connect(self.aprofundamento_interativo_clicked)
         self.bidirecional.clicked.connect(self.bidirecional_clicked)
 
@@ -21,11 +20,9 @@ class MarioParty(Ui_MarioParty):
     def profundidade_clicked(self):
         self.button_clicked(busca().profundidade(origem, destino))
 
-    def profundidade_limitada_l2_clicked(self):
-        self.button_clicked(busca().prof_limitada(origem, destino, 2))
-
-    def profundidade_limitada_l6_clicked(self):
-        self.button_clicked(busca().prof_limitada(origem, destino, 6))
+    def profundidade_limitada_clicked(self):
+        limite = int(self.profundidade_limite.text())
+        self.button_clicked(busca().prof_limitada(origem, destino, limite))
 
     def aprofundamento_interativo_clicked(self):
         self.button_clicked(busca().aprof_iterativo(origem, destino, 6))
