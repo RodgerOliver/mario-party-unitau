@@ -25,7 +25,8 @@ class MarioParty(Ui_MarioParty):
         self.button_clicked(busca().prof_limitada(origem, destino, limite))
 
     def aprofundamento_interativo_clicked(self):
-        self.button_clicked(busca().aprof_iterativo(origem, destino, 6))
+        limite = int(self.profundidade_limite.text())
+        self.button_clicked(busca().aprof_iterativo(origem, destino, limite))
 
     def bidirecional_clicked(self):
         self.button_clicked(busca().bidirecional(origem, destino))
