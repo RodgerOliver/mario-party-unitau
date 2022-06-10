@@ -1,3 +1,5 @@
+import sys
+from PyQt5 import QtWidgets
 from Mario_Party_ui import *
 from PyQt5.QtWidgets import QMessageBox
 from src.busca_local_sem_info import *
@@ -83,3 +85,11 @@ class MarioParty(Ui_MarioParty):
         solucao += 'Solução: '
         solucao += '[ ' + ', '.join(array_solucao) + ' ]'
         self.retorno.setText(solucao)
+
+if __name__ == "__main__":
+    app = QtWidgets.QApplication(sys.argv)
+    MarioPartyWindow = QtWidgets.QMainWindow()
+    marioPartyUi = MarioParty()
+    marioPartyUi.init(MarioPartyWindow)
+    MarioPartyWindow.show()
+    sys.exit(app.exec_())
