@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>825</width>
-    <height>694</height>
+    <width>822</width>
+    <height>705</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -59,7 +59,7 @@
       <x>360</x>
       <y>20</y>
       <width>431</width>
-      <height>221</height>
+      <height>241</height>
      </rect>
     </property>
     <property name="text">
@@ -76,7 +76,7 @@
     <property name="geometry">
      <rect>
       <x>360</x>
-      <y>260</y>
+      <y>280</y>
       <width>431</width>
       <height>271</height>
      </rect>
@@ -196,7 +196,7 @@ Interativo</string>
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>260</y>
+      <y>280</y>
       <width>291</width>
       <height>271</height>
      </rect>
@@ -221,7 +221,7 @@ padding: 10px;</string>
     <property name="geometry">
      <rect>
       <x>360</x>
-      <y>540</y>
+      <y>560</y>
       <width>91</width>
       <height>41</height>
      </rect>
@@ -363,7 +363,7 @@ font: 75 15pt &quot;Noto Sans CJK HK&quot;;</string>
     <property name="geometry">
      <rect>
       <x>370</x>
-      <y>590</y>
+      <y>610</y>
       <width>71</width>
       <height>31</height>
      </rect>
@@ -391,7 +391,7 @@ padding: 2px;</string>
     <property name="geometry">
      <rect>
       <x>700</x>
-      <y>540</y>
+      <y>560</y>
       <width>91</width>
       <height>41</height>
      </rect>
@@ -533,7 +533,7 @@ font: 75 15pt &quot;Noto Sans CJK HK&quot;;</string>
     <property name="geometry">
      <rect>
       <x>710</x>
-      <y>590</y>
+      <y>610</y>
       <width>71</width>
       <height>31</height>
      </rect>
@@ -563,7 +563,7 @@ padding: 2px;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>825</width>
+     <width>822</width>
      <height>20</height>
     </rect>
    </property>
