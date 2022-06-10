@@ -569,8 +569,7 @@ padding: 2px;</string>
      </rect>
     </property>
     <property name="toolTip">
-     <string>Valor do limite do algoritmo de
-profundidade limitada</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Valor do limite do algoritmo de&lt;/p&gt;&lt;p&gt;profundidade limitada e&lt;/p&gt;&lt;p&gt;aprofundamento interativo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">font: 75 10pt &quot;Noto Sans CJK HK&quot;;
