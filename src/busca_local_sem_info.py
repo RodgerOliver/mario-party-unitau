@@ -1,11 +1,12 @@
 class No(object):
     def __init__(self, pai=None, estado=None, valor1=None, valor2=None, anterior=None, proximo=None):
-        self.pai       = pai
-        self.estado    = estado
-        self.valor1    = valor1
-        self.valor2    = valor2
-        self.anterior  = anterior
-        self.proximo   = proximo
+        self.pai = pai
+        self.estado = estado
+        self.valor1 = valor1
+        self.valor2 = valor2
+        self.anterior = anterior
+        self.proximo = proximo
+
 
 class lista(object):
     head = None
@@ -31,7 +32,7 @@ class lista(object):
             self.head = novo_no
         else:
             self.tail.proximo = novo_no
-            novo_no.anterior   = self.tail
+            novo_no.anterior = self.tail
         self.tail = novo_no
 
     # REMOVE NO INÍCIO DA LISTA
@@ -103,7 +104,7 @@ class lista(object):
         return caminho
 
     # EXIBE O CAMINHO ENCONTRADO (BIDIRECIONAL)
-    def exibeCaminho1(self,valor):
+    def exibeCaminho1(self, valor):
 
         atual = self.head
         while atual.estado != valor:
@@ -117,6 +118,7 @@ class lista(object):
         caminho.append(atual.estado)
         return caminho
 
+
 class busca(object):
     # BUSCA EM AMPLITUDE
     def amplitude(self, inicio, fim):
@@ -128,8 +130,8 @@ class busca(object):
         l2 = lista()
 
         # insere ponto inicial como nó raiz da árvore
-        l1.insereUltimo(inicio,0,0,None)
-        l2.insereUltimo(inicio,0,0,None)
+        l1.insereUltimo(inicio, 0, 0, None)
+        l2.insereUltimo(inicio, 0, 0, None)
 
         # controle de nós visitados
         visitado = []
@@ -141,7 +143,7 @@ class busca(object):
         while l1.vazio() == False:
             # remove o primeiro da fila
             atual = l1.deletaPrimeiro()
-            #if atual is None: break
+            # if atual is None: break
 
             ind = nos.index(atual.estado)
 
@@ -154,11 +156,11 @@ class busca(object):
 
                 # controle de nós repetidos
                 for j in range(len(visitado)):
-                    if visitado[j][0]==novo:
-                        if visitado[j][1]<=(atual.valor1+1):
+                    if visitado[j][0] == novo:
+                        if visitado[j][1] <= (atual.valor1+1):
                             flag = False
                         else:
-                            visitado[j][1]=atual.valor1+1
+                            visitado[j][1] = atual.valor1+1
                         break
 
                 # se não foi visitado inclui na fila
@@ -176,12 +178,11 @@ class busca(object):
                     if novo == fim:
                         caminho = []
                         caminho += l2.exibeCaminho()
-                        #print("Fila:\n",l1.exibeLista())
+                        # print("Fila:\n",l1.exibeLista())
                         #print("\nÁrvore de busca:\n",l2.exibeLista())
                         return caminho
 
-        return "caminho não encontrado"
-
+        return "[]"
 
     # BUSCA EM PROFUNDIDADE
     def profundidade(self, inicio, fim):
@@ -193,8 +194,8 @@ class busca(object):
         l2 = lista()
 
         # insere ponto inicial como nó raiz da árvore
-        l1.insereUltimo(inicio,0,0,None)
-        l2.insereUltimo(inicio,0,0,None)
+        l1.insereUltimo(inicio, 0, 0, None)
+        l2.insereUltimo(inicio, 0, 0, None)
 
         # controle de nós visitados
         visitado = []
@@ -206,7 +207,7 @@ class busca(object):
         while l1.vazio() == False:
             # remove o primeiro da fila
             atual = l1.deletaUltimo()
-            #if atual is None: break
+            # if atual is None: break
 
             ind = nos.index(atual.estado)
 
@@ -219,11 +220,11 @@ class busca(object):
 
                 # controle de nós repetidos
                 for j in range(len(visitado)):
-                    if visitado[j][0]==novo:
-                        if visitado[j][1]<=(atual.valor1+1):
+                    if visitado[j][0] == novo:
+                        if visitado[j][1] <= (atual.valor1+1):
                             flag = False
                         else:
-                            visitado[j][1]=atual.valor1+1
+                            visitado[j][1] = atual.valor1+1
                         break
 
                 # se não foi visitado inclui na fila
@@ -241,7 +242,7 @@ class busca(object):
                     if novo == fim:
                         caminho = []
                         caminho += l2.exibeCaminho()
-                        #print("Fila:\n",l1.exibeLista())
+                        # print("Fila:\n",l1.exibeLista())
                         #print("\nÁrvore de busca:\n",l2.exibeLista())
                         return caminho
         return []
@@ -256,8 +257,8 @@ class busca(object):
         l2 = lista()
 
         # insere ponto inicial como nó raiz da árvore
-        l1.insereUltimo(inicio,0,0,None)
-        l2.insereUltimo(inicio,0,0,None)
+        l1.insereUltimo(inicio, 0, 0, None)
+        l2.insereUltimo(inicio, 0, 0, None)
 
         # controle de nós visitados
         visitado = []
@@ -283,11 +284,11 @@ class busca(object):
 
                     # controle de nós repetidos
                     for j in range(len(visitado)):
-                        if visitado[j][0]==novo:
-                            if visitado[j][1]<=(atual.valor1+1):
+                        if visitado[j][0] == novo:
+                            if visitado[j][1] <= (atual.valor1+1):
                                 flag = False
                             else:
-                                visitado[j][1]=atual.valor1+1
+                                visitado[j][1] = atual.valor1+1
                             break
 
                     # se não foi visitado inclui na fila
@@ -305,7 +306,7 @@ class busca(object):
                         if novo == fim:
                             caminho = []
                             caminho += l2.exibeCaminho()
-                            #print("Fila:\n",l1.exibeLista())
+                            # print("Fila:\n",l1.exibeLista())
                             #print("\nÁrvore de busca:\n",l2.exibeLista())
                             return caminho
         return []
@@ -321,8 +322,8 @@ class busca(object):
             l2 = lista()
 
             # insere ponto inicial como nó raiz da árvore
-            l1.insereUltimo(inicio,0,0,None)
-            l2.insereUltimo(inicio,0,0,None)
+            l1.insereUltimo(inicio, 0, 0, None)
+            l2.insereUltimo(inicio, 0, 0, None)
 
             # controle de nós visitados
             visitado = []
@@ -348,17 +349,17 @@ class busca(object):
 
                         # controle de nós repetidos
                         for j in range(len(visitado)):
-                            if visitado[j][0]==novo:
-                                if visitado[j][1]<=(atual.valor1+1):
+                            if visitado[j][0] == novo:
+                                if visitado[j][1] <= (atual.valor1+1):
                                     flag = False
                                 else:
-                                    visitado[j][1]=atual.valor1+1
+                                    visitado[j][1] = atual.valor1+1
                                 break
 
                         # se não foi visitado inclui na fila
                         if flag:
-                            l1.insereUltimo(novo, atual.valor1 + 1, 0,atual)
-                            l2.insereUltimo(novo, atual.valor1 + 1, 0,atual)
+                            l1.insereUltimo(novo, atual.valor1 + 1, 0, atual)
+                            l2.insereUltimo(novo, atual.valor1 + 1, 0, atual)
 
                             # marca como visitado
                             linha = []
@@ -370,7 +371,7 @@ class busca(object):
                             if novo == fim:
                                 caminho = []
                                 caminho += l2.exibeCaminho()
-                                #print("Fila:\n",l1.exibeLista())
+                                # print("Fila:\n",l1.exibeLista())
                                 #print("\nÁrvore de busca:\n",l2.exibeLista())
                                 return caminho
         return []
@@ -387,11 +388,10 @@ class busca(object):
         l4 = lista()
 
         # insere ponto inicial como nó raiz da árvore
-        l1.insereUltimo(inicio,0,0,None)
-        l2.insereUltimo(inicio,0,0,None)
-        l3.insereUltimo(fim,0,0,None)
-        l4.insereUltimo(fim,0,0,None)
-
+        l1.insereUltimo(inicio, 0, 0, None)
+        l2.insereUltimo(inicio, 0, 0, None)
+        l3.insereUltimo(fim, 0, 0, None)
+        l4.insereUltimo(fim, 0, 0, None)
 
         # controle de nós visitados
         visitado1 = []
@@ -406,9 +406,9 @@ class busca(object):
         linha.append(0)
         visitado2.append(linha)
 
-        primeiro=True
+        primeiro = True
 
-        while l1.vazio() == False and primeiro==True:
+        while l1.vazio() == False and primeiro == True:
             # remove o primeiro da fila
             atual = l1.deletaPrimeiro()
 
@@ -423,11 +423,11 @@ class busca(object):
 
                 # controle de nós repetidos
                 for j in range(len(visitado1)):
-                    if visitado1[j][0]==novo:
-                        if visitado1[j][1]<=(atual.valor1+1):
+                    if visitado1[j][0] == novo:
+                        if visitado1[j][1] <= (atual.valor1+1):
                             flag = False
                         else:
-                            visitado1[j][1]=atual.valor1+1
+                            visitado1[j][1] = atual.valor1+1
                         break
 
                 # se não foi visitado inclui na fila
@@ -444,22 +444,22 @@ class busca(object):
                     # verifica se é o objetivo
                     flag = False
                     for j in range(len(visitado2)):
-                        if visitado2[j][0]==novo:
+                        if visitado2[j][0] == novo:
                             flag = True
                             break
 
                     if flag:
                         caminho = []
-                        #print("Fila:\n",l1.exibeLista())
+                        # print("Fila:\n",l1.exibeLista())
                         #print("\nÁrvore de busca:\n",l2.exibeLista())
                         #print("\nÁrvore de busca:\n",l4.exibeLista())
                         caminho += l2.exibeCaminho()
                         caminho += l4.exibeCaminho1(novo)
                         return caminho
 
-            primeiro=False
+            primeiro = False
 
-        while l3.vazio() == False and primeiro==False:
+        while l3.vazio() == False and primeiro == False:
             # remove o primeiro da fila
             atual = l3.deletaPrimeiro()
 
@@ -474,11 +474,11 @@ class busca(object):
 
                 # controle de nós repetidos
                 for j in range(len(visitado2)):
-                    if visitado2[j][0]==novo:
-                        if visitado2[j][1]<=(atual.valor1+1):
+                    if visitado2[j][0] == novo:
+                        if visitado2[j][1] <= (atual.valor1+1):
                             flag = False
                         else:
-                            visitado2[j][1]=atual.valor1+1
+                            visitado2[j][1] = atual.valor1+1
                         break
 
                 # se não foi visitado inclui na fila
@@ -495,26 +495,27 @@ class busca(object):
                     # verifica se é o objetivo
                     flag = False
                     for j in range(len(visitado1)):
-                        if visitado1[j][0]==novo:
+                        if visitado1[j][0] == novo:
                             flag = True
                             break
 
                     if flag:
                         caminho = []
-                        #print("Fila:\n",l3.exibeLista())
+                        # print("Fila:\n",l3.exibeLista())
                         #print("\nÁrvore de busca:\n",l4.exibeLista())
                         #print("\nÁrvore de busca:\n",l2.exibeLista())
                         caminho += l4.exibeCaminho()
                         caminho += l2.exibeCaminho1(novo)
                         return caminho[::-1]
 
-                primeiro=False
+                primeiro = False
 
         return []
 
+
 """
 ********************************************************************
-                     PROBLEMA: MAPA DA ROMÊNIA
+                    PROBLEMA: MAPA DA ROMÊNIA
 ********************************************************************
 
 nos = ["ARAD", "BUCARESTE", "CRAIOVA", "DOBRETA",
@@ -525,68 +526,67 @@ nos = ["ARAD", "BUCARESTE", "CRAIOVA", "DOBRETA",
 
 # ORDEM DECRESCENTE
 grafo = [
-        ["ZERIND", "TIMISOARA", "SIBIU"],
-        ["URZICENI", "PITESTI", "GIORGIU", "FAGARAS"],
-        ["RIMNICU VILCEA", "PITESTI", "DOBRETA"],
-        ["MEHADIA", "CRAIOVA"],
-        ["HIRSOVA"],
-        ["SIBIU", "BUCARESTE"],
-        ["BUCARESTE"],
-        ["URZICENI", "EFORIE"],
-        ["VASLUI", "NEAMT"],
-        ["TIMISOARA", "MEHADIA"],
-        ["LUGOJ", "DOBRETA"],
-        ["IASI"],
-        ["ZERIND", "SIBIU"],
-        ["RIMNICU VILCEA", "CRAIOVA", "BUCARESTE"],
-        ["SIBIU", "PITESTI", "CRAIOVA"],
-        ["RIMNICU VILCEA", "ORADEA", "FAGARAS", "ARAD"],
-        ["LUGOJ", "ARAD"],
-        ["VASLUI", "HIRSOVA", "BUCARESTE"],
-        ["URZICENI", "IASI"],
-        ["ORADEA", "ARAD"]
-        ]
+    ["ZERIND", "TIMISOARA", "SIBIU"],
+    ["URZICENI", "PITESTI", "GIORGIU", "FAGARAS"],
+    ["RIMNICU VILCEA", "PITESTI", "DOBRETA"],
+    ["MEHADIA", "CRAIOVA"],
+    ["HIRSOVA"],
+    ["SIBIU", "BUCARESTE"],
+    ["BUCARESTE"],
+    ["URZICENI", "EFORIE"],
+    ["VASLUI", "NEAMT"],
+    ["TIMISOARA", "MEHADIA"],
+    ["LUGOJ", "DOBRETA"],
+    ["IASI"],
+    ["ZERIND", "SIBIU"],
+    ["RIMNICU VILCEA", "CRAIOVA", "BUCARESTE"],
+    ["SIBIU", "PITESTI", "CRAIOVA"],
+    ["RIMNICU VILCEA", "ORADEA", "FAGARAS", "ARAD"],
+    ["LUGOJ", "ARAD"],
+    ["VASLUI", "HIRSOVA", "BUCARESTE"],
+    ["URZICENI", "IASI"],
+    ["ORADEA", "ARAD"]
+]
 
 
 ********************************************************************
-                     PROBLEMA: VALE DO PARAÍBA
+                    PROBLEMA: VALE DO PARAÍBA
 ********************************************************************
 
 
 nos = ["Ap","Ca","Cg","CJ","CP","Cr","Gu","Ja","Jc","Lo","ML",
-       "NS","Pa","Pi","Ro","RS","SA","SJ","SL","Ta","Tr","Ub"]
+        "NS","Pa","Pi","Ro","RS","SA","SJ","SL","Ta","Tr","Ub"]
 
 # ORDEM DECRESCENTE
 grafo = [
-            ["Ro","Gu"],
-            ["Ja","SJ","Ta"],
-            ["Pa","Ub"],
-            ["SA","Ta","Tr"],
-            ["Cr","Lo"],
-            ["CP"],
-            ["Ap","Lo"],
-            ["Ca","Pa","SJ"],
-            ["SJ"],
-            ["CP","Gu"],
-            ["SA","SJ"],
-            ["RS","SL"],
-            ["Cg","Ja","SJ"],
-            ["Ro","Ta","Tr"],
-            ["Pi","Ap"],
-            ["NS","SL","Ta"],
-            ["CJ","ML","Ta","Tr"],
-            ["Ca","Jc","ML","Pa","Ja"],
-            ["Ub","Ta","NS","RS"],
-            ["Ca","Tr","Pi","RS","CJ","SL","SA"],
-            ["Ta","CJ","Pi","SA"],
-            ["SL","Cg"]
-
-       ]
+    ["Ro","Gu"],
+    ["Ja","SJ","Ta"],
+    ["Pa","Ub"],
+    ["SA","Ta","Tr"],
+    ["Cr","Lo"],
+    ["CP"],
+    ["Ap","Lo"],
+    ["Ca","Pa","SJ"],
+    ["SJ"],
+    ["CP","Gu"],
+    ["SA","SJ"],
+    ["RS","SL"],
+    ["Cg","Ja","SJ"],
+    ["Ro","Ta","Tr"],
+    ["Pi","Ap"],
+    ["NS","SL","Ta"],
+    ["CJ","ML","Ta","Tr"],
+    ["Ca","Jc","ML","Pa","Ja"],
+    ["Ub","Ta","NS","RS"],
+    ["Ca","Tr","Pi","RS","CJ","SL","SA"],
+    ["Ta","CJ","Pi","SA"],
+    ["SL","Cg"]
+]
 """
 
 """
 ********************************************************************
-                     PROBLEMA: MARIO PARTY
+                    PROBLEMA: MARIO PARTY
 ********************************************************************
 """
 
@@ -627,35 +627,36 @@ grafo = [
     ["S", "C", "F", "D"],
 ]
 
+
 # PROGRAMA PRINCIPAL
+if __name__ == "__main__":
+    sol = busca()
+    caminho = []
 
-sol = busca()
-caminho = []
+    # DEFINIÇÃO DO PROBLEMA (Romênia)
+    # origem, destino  = "ARAD", "LUGOJ"
+    # DEFINIÇÃO DO PROBLEMA (Mario Party)
+    origem, destino = "A", "O"
 
-# DEFINIÇÃO DO PROBLEMA (Romênia)
-# origem, destino  = "ARAD", "LUGOJ"
-# DEFINIÇÃO DO PROBLEMA (Mario Party)
-origem, destino  = "A", "O"
+    caminho = sol.amplitude(origem, destino)
+    print("\n*****AMPLITUDE*****\n", caminho)
 
-caminho = sol.amplitude(origem,destino)
-print("\n*****AMPLITUDE*****\n",caminho)
+    caminho = sol.profundidade(origem, destino)
+    print("\n*****PROFUNDIDADE*****\n", caminho)
 
-caminho = sol.profundidade(origem,destino)
-print("\n*****PROFUNDIDADE*****\n",caminho)
+    lim = 2
+    caminho = sol.prof_limitada(origem, destino, lim-1)
+    print("\n***** PROFUNDIDADE LIMITADA ( L =", lim-1, ")*****\n", caminho)
 
-lim = 2
-caminho = sol.prof_limitada(origem, destino, lim-1)
-print("\n***** PROFUNDIDADE LIMITADA ( L =",lim-1,")*****\n",caminho)
+    caminho = sol.prof_limitada(origem, destino, lim)
+    print("\n*****PROFUNDIDADE LIMITADA ( L =", lim, ")*****\n", caminho)
 
-caminho = sol.prof_limitada(origem, destino, lim)
-print("\n*****PROFUNDIDADE LIMITADA ( L =",lim,")*****\n",caminho)
+    caminho = sol.prof_limitada(origem, destino, lim+4)
+    print("\n*****PROFUNDIDADE LIMITADA ( L =", lim+4, ")*****\n", caminho)
 
-caminho = sol.prof_limitada(origem, destino, lim+4)
-print("\n*****PROFUNDIDADE LIMITADA ( L =",lim+4,")*****\n",caminho)
+    lim = len(nos)
+    caminho = sol.aprof_iterativo(origem, destino, lim)
+    print("\n*****APROFUNDAMENTO ITERATIVO*****\n", caminho)
 
-lim = len(nos)
-caminho = sol.aprof_iterativo(origem, destino, lim)
-print("\n*****APROFUNDAMENTO ITERATIVO*****\n",caminho)
-
-caminho = sol.bidirecional(origem,destino)
-print("\n*****BIDIRECIONAL*****\n",caminho)
+    caminho = sol.bidirecional(origem, destino)
+    print("\n*****BIDIRECIONAL*****\n", caminho)

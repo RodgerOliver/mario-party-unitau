@@ -1,11 +1,12 @@
 class No(object):
     def __init__(self, pai=None, estado=None, valor1=None, valor2=None, anterior=None, proximo=None):
-        self.pai       = pai
-        self.estado    = estado
-        self.valor1    = valor1        # valor do nó na árvore
-        self.valor2    = valor2        # custo do caminho até o nó atual
-        self.anterior  = anterior
-        self.proximo   = proximo
+        self.pai = pai
+        self.estado = estado
+        self.valor1 = valor1        # valor do nó na árvore
+        self.valor2 = valor2        # custo do caminho até o nó atual
+        self.anterior = anterior
+        self.proximo = proximo
+
 
 class lista(object):
     head = None
@@ -30,7 +31,7 @@ class lista(object):
             self.head = novo_no
         else:
             self.tail.proximo = novo_no
-            novo_no.anterior   = self.tail
+            novo_no.anterior = self.tail
         self.tail = novo_no
 
     # INSERE NO FIM DA LISTA
@@ -38,26 +39,26 @@ class lista(object):
 
         # se lista estiver vazia
         if self.head is None:
-            self.inserePrimeiro(s,v1,v2,p)
+            self.inserePrimeiro(s, v1, v2, p)
         else:
             atual = self.head
             while atual.valor1 < v1:
                 atual = atual.proximo
-                if atual is None: break
+                if atual is None:
+                    break
 
             if atual == self.head:
-                self.inserePrimeiro(s,v1,v2,p)
+                self.inserePrimeiro(s, v1, v2, p)
             else:
                 if atual is None:
-                    self.insereUltimo(s,v1,v2,p)
+                    self.insereUltimo(s, v1, v2, p)
                 else:
-                    novo_no = No(p,s,v1,v2,None,None)
+                    novo_no = No(p, s, v1, v2, None, None)
                     aux = atual.anterior
                     aux.proximo = novo_no
                     novo_no.anterior = aux
                     atual.anterior = novo_no
                     novo_no.proximo = atual
-
 
     # REMOVE NO INÍCIO DA LISTA
     def deletaPrimeiro(self):
@@ -111,8 +112,7 @@ class lista(object):
         caminho.append(atual.estado)
         return caminho
 
-    def exibeArvore1(self,s):
-
+    def exibeArvore1(self, s):
 
         atual = self.head
         while atual.estado != s:
@@ -125,7 +125,6 @@ class lista(object):
             atual = atual.pai
         caminho.append(atual.estado)
         return caminho
-
 
     def exibeArvore2(self, s, v1):
 
@@ -141,12 +140,12 @@ class lista(object):
         caminho.append(atual.estado)
         return caminho
 
-
     def primeiro(self):
         return self.head
 
     def ultimo(self):
         return self.tail
+
 
 class busca(object):
 
@@ -156,8 +155,8 @@ class busca(object):
         l2 = lista()
         visitado = []
 
-        l1.insereUltimo(inicio,0,0,None)
-        l2.insereUltimo(inicio,0,0,None)
+        l1.insereUltimo(inicio, 0, 0, None)
+        l2.insereUltimo(inicio, 0, 0, None)
         linha = []
         linha.append(inicio)
         linha.append(0)
@@ -167,7 +166,7 @@ class busca(object):
             atual = l1.deletaPrimeiro()
             if atual.estado == fim:
                 caminho = []
-                caminho = l2.exibeArvore2(atual.estado,atual.valor1)
+                caminho = l2.exibeArvore2(atual.estado, atual.valor1)
                 return caminho, atual.valor2
 
             ind = nos.index(atual.estado)
@@ -176,21 +175,21 @@ class busca(object):
 
                 # CÁLCULO DO CUSTO DA ORIGEM ATÉ O NÓ ATUAL
                 v2 = atual.valor2 + grafo[ind][i][1]  # custo do caminho
-                v1 = v2 # f1(n)
+                v1 = v2  # f1(n)
 
                 flag1 = True
                 flag2 = True
                 for j in range(len(visitado)):
-                    if visitado[j][0]==novo:
-                        if visitado[j][1]<=v2:
+                    if visitado[j][0] == novo:
+                        if visitado[j][1] <= v2:
                             flag1 = False
                         else:
-                            visitado[j][1]=v2
+                            visitado[j][1] = v2
                             flag2 = False
                         break
 
                 if flag1:
-                    l1.inserePos_X(novo, v1 , v2, atual)
+                    l1.inserePos_X(novo, v1, v2, atual)
                     l2.inserePos_X(novo, v1, v2, atual)
                     if flag2:
                         linha = []
@@ -198,7 +197,7 @@ class busca(object):
                         linha.append(v2)
                         visitado.append(linha)
 
-        return "Caminho não encontrado"
+        return "[]"
 
     def greedy(self, inicio, fim):
 
@@ -206,8 +205,8 @@ class busca(object):
         l2 = lista()
         visitado = []
         2
-        l1.insereUltimo(inicio,0,0,None)
-        l2.insereUltimo(inicio,0,0,None)
+        l1.insereUltimo(inicio, 0, 0, None)
+        l2.insereUltimo(inicio, 0, 0, None)
         linha = []
         linha.append(inicio)
         linha.append(0)
@@ -217,7 +216,7 @@ class busca(object):
             atual = l1.deletaPrimeiro()
             if atual.estado == fim:
                 caminho = []
-                caminho = l2.exibeArvore2(atual.estado,atual.valor1)
+                caminho = l2.exibeArvore2(atual.estado, atual.valor1)
                 return caminho, atual.valor2
 
             ind = nos.index(atual.estado)
@@ -227,21 +226,21 @@ class busca(object):
 
                 # CÁLCULO DO CUSTO DA ORIGEM ATÉ O NÓ ATUAL
                 v2 = atual.valor2 + grafo[ind][i][1]  # custo do caminho
-                v1 = h[j] # f2(n)
+                v1 = h[j]  # f2(n)
 
                 flag1 = True
                 flag2 = True
                 for j in range(len(visitado)):
-                    if visitado[j][0]==novo:
-                        if visitado[j][1]<=v2:
+                    if visitado[j][0] == novo:
+                        if visitado[j][1] <= v2:
                             flag1 = False
                         else:
-                            visitado[j][1]=v2
+                            visitado[j][1] = v2
                             flag2 = False
                         break
 
                 if flag1:
-                    l1.inserePos_X(novo, v1 , v2, atual)
+                    l1.inserePos_X(novo, v1, v2, atual)
                     l2.inserePos_X(novo, v1, v2, atual)
                     if flag2:
                         linha = []
@@ -249,8 +248,7 @@ class busca(object):
                         linha.append(v2)
                         visitado.append(linha)
 
-        return "Caminho não encontrado"
-
+        return "[]"
 
     def a_estrela(self, inicio, fim):
 
@@ -258,8 +256,8 @@ class busca(object):
         l2 = lista()
         visitado = []
 
-        l1.insereUltimo(inicio,0,0,None)
-        l2.insereUltimo(inicio,0,0,None)
+        l1.insereUltimo(inicio, 0, 0, None)
+        l2.insereUltimo(inicio, 0, 0, None)
         linha = []
         linha.append(inicio)
         linha.append(0)
@@ -269,7 +267,7 @@ class busca(object):
             atual = l1.deletaPrimeiro()
             if atual.estado == fim:
                 caminho = []
-                caminho = l2.exibeArvore2(atual.estado,atual.valor1)
+                caminho = l2.exibeArvore2(atual.estado, atual.valor1)
                 return caminho, atual.valor1
 
             ind = nos.index(atual.estado)
@@ -279,21 +277,21 @@ class busca(object):
 
                 # CÁLCULO DO CUSTO DA ORIGEM ATÉ O NÓ ATUAL
                 v2 = atual.valor2 + grafo[ind][i][1]  # custo do caminho
-                v1 = h[j] + v2 # f1(n) + f2(n)
+                v1 = h[j] + v2  # f1(n) + f2(n)
 
                 flag1 = True
                 flag2 = True
                 for j in range(len(visitado)):
-                    if visitado[j][0]==novo:
-                        if visitado[j][1]<=v2:
+                    if visitado[j][0] == novo:
+                        if visitado[j][1] <= v2:
                             flag1 = False
                         else:
-                            visitado[j][1]=v2
+                            visitado[j][1] = v2
                             flag2 = False
                         break
 
                 if flag1:
-                    l1.inserePos_X(novo, v1 , v2, atual)
+                    l1.inserePos_X(novo, v1, v2, atual)
                     l2.inserePos_X(novo, v1, v2, atual)
                     if flag2:
                         linha = []
@@ -301,49 +299,51 @@ class busca(object):
                         linha.append(v2)
                         visitado.append(linha)
 
-        return "Caminho não encontrado"
-
+        return "[]"
 
 
 nos = ["ARAD", "BUCARESTE", "CRAIOVA", "DOBRETA", "EFORIE", "FAGARAS", "GIURGIU", "HIRSOVA", "IASI", "LUGOJ",
-        "MEHADIA", "NEAMT", "ORADEA","PITESTI", "RIMINCU VILCEA", "SIBIU", "TIMISOARA", "URZICENI", "VASLUI",
-        "ZERIND"]
+       "MEHADIA", "NEAMT", "ORADEA", "PITESTI", "RIMINCU VILCEA", "SIBIU", "TIMISOARA", "URZICENI", "VASLUI",
+       "ZERIND"]
 
 grafo = [
-        [["ZERIND",75], ["TIMISOARA",118], ["SIBIU",140]],
-        [["URZICENI",85], ["PITESTI",101], ["GIURGIU",90], ["FAGARAS",211]],
-        [["RIMINCU VILCEA",146], ["PITESTI",138], ["DOBRETA",120]],
-        [["MEHADIA",75], ["CRAIOVA",120]],
-        [["HIRSOVA",86]],
-        [["SIBIU",99], ["BUCARESTE",211]],
-        [["BUCARESTE",90]],
-        [["URZICENI",98], ["EFORIE",86]],
-        [["VASLUI",92], ["NEAMT",87]],
-        [["TIMISOARA",111],["MEHADIA",70]],
-        [["LUGOJ",70], ["DOBRETA",75]],
-        [["IASI",87]],
-        [["ZERIND",71], ["SIBIU",151]],
-        [["RIMINCU VILCEA",97], ["CRAIOVA",138], ["BUCARESTE",101]],
-        [["SIBIU",80], ["PITESTI",97], ["CRAIOVA",146]],
-        [["RIMINCU VILCEA",80], ["ORADEA",151], ["FAGARAS",99], ["ARAD",140]],
-        [["LUGOJ",111], ["ARAD",118]],
-        [["VASLUI",142], ["HIRSOVA",98], ["BUCARESTE",85]],
-        [["URZICENI",142], ["IASI",92]],
-        [["ORADEA",71], ["ARAD",75]]
-        ]
+    [["ZERIND", 75], ["TIMISOARA", 118], ["SIBIU", 140]],
+    [["URZICENI", 85], ["PITESTI", 101], ["GIURGIU", 90], ["FAGARAS", 211]],
+    [["RIMINCU VILCEA", 146], ["PITESTI", 138], ["DOBRETA", 120]],
+    [["MEHADIA", 75], ["CRAIOVA", 120]],
+    [["HIRSOVA", 86]],
+    [["SIBIU", 99], ["BUCARESTE", 211]],
+    [["BUCARESTE", 90]],
+    [["URZICENI", 98], ["EFORIE", 86]],
+    [["VASLUI", 92], ["NEAMT", 87]],
+    [["TIMISOARA", 111], ["MEHADIA", 70]],
+    [["LUGOJ", 70], ["DOBRETA", 75]],
+    [["IASI", 87]],
+    [["ZERIND", 71], ["SIBIU", 151]],
+    [["RIMINCU VILCEA", 97], ["CRAIOVA", 138], ["BUCARESTE", 101]],
+    [["SIBIU", 80], ["PITESTI", 97], ["CRAIOVA", 146]],
+    [["RIMINCU VILCEA", 80], ["ORADEA", 151], ["FAGARAS", 99], ["ARAD", 140]],
+    [["LUGOJ", 111], ["ARAD", 118]],
+    [["VASLUI", 142], ["HIRSOVA", 98], ["BUCARESTE", 85]],
+    [["URZICENI", 142], ["IASI", 92]],
+    [["ORADEA", 71], ["ARAD", 75]]
+]
 
-# HEURISTICA SERVE SOMENTE PARA DESTINO BUCARESTE
-h = [366,0,160,242,161,178,77,151,226,244,241,234,380,98,193,253,329,80,199,374]
+# HEURÍSTICA SERVE SOMENTE PARA DESTINO BUCARESTE
+h = [366, 0, 160, 242, 161, 178, 77, 151, 226, 244,
+     241, 234, 380, 98, 193, 253, 329, 80, 199, 374]
 
+# PROGRAMA PRINCIPAL
+if __name__ == "__main__":
 
-sol = busca()
-caminho = []
+    sol = busca()
+    caminho = []
 
-caminho, custo = sol.custo_uniforme("ARAD","BUCARESTE")
-print("Custo Uniforme: ",caminho[::-1],"\ncusto do caminho: ",custo)
+    caminho, custo = sol.custo_uniforme("ARAD", "BUCARESTE")
+    print("Custo Uniforme: ", caminho[::-1], "\ncusto do caminho: ", custo)
 
-caminho, custo = sol.greedy("ARAD","BUCARESTE")
-print("\nGreedy: ",caminho[::-1],"\ncusto do caminho: ",custo)
+    caminho, custo = sol.greedy("ARAD", "BUCARESTE")
+    print("\nGreedy: ", caminho[::-1], "\ncusto do caminho: ", custo)
 
-caminho, custo = sol.a_estrela("ARAD","BUCARESTE")
-print("\nA estrela: ",caminho[::-1],"\ncusto do caminho: ",custo)
+    caminho, custo = sol.a_estrela("ARAD", "BUCARESTE")
+    print("\nA estrela: ", caminho[::-1], "\ncusto do caminho: ", custo)
