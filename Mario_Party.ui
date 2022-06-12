@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>820</width>
-    <height>700</height>
+    <width>960</width>
+    <height>630</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>820</width>
-    <height>700</height>
+    <width>960</width>
+    <height>630</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -36,7 +36,22 @@
 	font: 75 10pt &quot;Noto Sans CJK HK&quot;;
 	color: rgb(255, 255, 255);
 }
-QPushButton.busca_local_com_info {
+
+QLabel {
+	font: 75 10pt &quot;Noto Sans CJK HK&quot;;
+	color: rgb(255, 255, 255);
+	padding: 2px;
+}
+
+.img {
+	padding: 0;
+}
+
+.busca_local_sem_info {
+	background-color: rgb(143, 57, 133);
+}
+
+.busca_local_com_info {
 	background-color: rgb(57, 143, 60);
 }
 
@@ -66,6 +81,9 @@ QLineEdit {
     <property name="text">
      <string>Amplitude</string>
     </property>
+    <property name="class" stdset="0">
+     <string>busca_local_sem_info</string>
+    </property>
     <attribute name="buttonGroup">
      <string notr="true">buttonGroup</string>
     </attribute>
@@ -88,6 +106,9 @@ QLineEdit {
     <property name="scaledContents">
      <bool>true</bool>
     </property>
+    <property name="class" stdset="0">
+     <string>img</string>
+    </property>
    </widget>
    <widget class="QLabel" name="imgPath">
     <property name="geometry">
@@ -107,6 +128,9 @@ QLineEdit {
     <property name="scaledContents">
      <bool>true</bool>
     </property>
+    <property name="class" stdset="0">
+     <string>img</string>
+    </property>
    </widget>
    <widget class="QPushButton" name="profundidade">
     <property name="geometry">
@@ -122,6 +146,9 @@ QLineEdit {
     </property>
     <property name="text">
      <string>Profundidade</string>
+    </property>
+    <property name="class" stdset="0">
+     <string>busca_local_sem_info</string>
     </property>
     <attribute name="buttonGroup">
      <string notr="true">buttonGroup</string>
@@ -142,6 +169,9 @@ QLineEdit {
     <property name="text">
      <string>Profundidade
 Limitada</string>
+    </property>
+    <property name="class" stdset="0">
+     <string>busca_local_sem_info</string>
     </property>
     <attribute name="buttonGroup">
      <string notr="true">buttonGroup</string>
@@ -165,6 +195,9 @@ Limitada</string>
     <property name="text">
      <string>Bidirecional</string>
     </property>
+    <property name="class" stdset="0">
+     <string>busca_local_sem_info</string>
+    </property>
     <attribute name="buttonGroup">
      <string notr="true">buttonGroup</string>
     </attribute>
@@ -184,6 +217,9 @@ Limitada</string>
     <property name="text">
      <string>Aprofundamento
 Interativo</string>
+    </property>
+    <property name="class" stdset="0">
+     <string>busca_local_sem_info</string>
     </property>
     <attribute name="buttonGroup">
      <string notr="true">buttonGroup</string>
@@ -217,8 +253,8 @@ padding: 10px;</string>
    <widget class="QComboBox" name="origem">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>600</y>
+      <x>880</x>
+      <y>20</y>
       <width>51</width>
       <height>31</height>
      </rect>
@@ -355,17 +391,17 @@ padding: 10px;</string>
    <widget class="QLabel" name="origem_label">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>560</y>
+      <x>800</x>
+      <y>20</y>
       <width>71</width>
       <height>31</height>
      </rect>
     </property>
+    <property name="statusTip">
+     <string>Origem para os algoritmos de busca local sem informação (botões roxos).</string>
+    </property>
     <property name="styleSheet">
-     <string notr="true">font: 75 10pt &quot;Noto Sans CJK HK&quot;;
-color: rgb(255, 255, 255);
-background-color: rgb(52, 138, 167);
-padding: 2px;</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>Origem</string>
@@ -379,12 +415,15 @@ padding: 2px;</string>
     <property name="margin">
      <number>0</number>
     </property>
+    <property name="class" stdset="0">
+     <string>busca_local_sem_info</string>
+    </property>
    </widget>
    <widget class="QComboBox" name="destino">
     <property name="geometry">
      <rect>
-      <x>460</x>
-      <y>600</y>
+      <x>880</x>
+      <y>60</y>
       <width>51</width>
       <height>31</height>
      </rect>
@@ -521,17 +560,14 @@ padding: 2px;</string>
    <widget class="QLabel" name="destino_label">
     <property name="geometry">
      <rect>
-      <x>450</x>
-      <y>560</y>
+      <x>800</x>
+      <y>60</y>
       <width>71</width>
       <height>31</height>
      </rect>
     </property>
-    <property name="styleSheet">
-     <string notr="true">font: 75 10pt &quot;Noto Sans CJK HK&quot;;
-color: rgb(255, 255, 255);
-background-color: rgb(52, 138, 167);
-padding: 2px;</string>
+    <property name="statusTip">
+     <string>Destino para os algoritmos de busca local sem informação (botões roxos).</string>
     </property>
     <property name="text">
      <string>Destino</string>
@@ -545,12 +581,15 @@ padding: 2px;</string>
     <property name="margin">
      <number>0</number>
     </property>
+    <property name="class" stdset="0">
+     <string>busca_local_sem_info</string>
+    </property>
    </widget>
    <widget class="QLineEdit" name="profundidade_limite">
     <property name="geometry">
      <rect>
-      <x>540</x>
-      <y>600</y>
+      <x>880</x>
+      <y>100</y>
       <width>51</width>
       <height>31</height>
      </rect>
@@ -571,8 +610,8 @@ padding: 2px;</string>
    <widget class="QLabel" name="profundidade_limite_label">
     <property name="geometry">
      <rect>
-      <x>530</x>
-      <y>560</y>
+      <x>800</x>
+      <y>100</y>
       <width>71</width>
       <height>31</height>
      </rect>
@@ -582,12 +621,6 @@ padding: 2px;</string>
     </property>
     <property name="layoutDirection">
      <enum>Qt::RightToLeft</enum>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 75 10pt &quot;Noto Sans CJK HK&quot;;
-color: rgb(255, 255, 255);
-background-color: rgb(52, 138, 167);
-padding: 2px;</string>
     </property>
     <property name="text">
      <string>Limite</string>
@@ -601,6 +634,151 @@ padding: 2px;</string>
     <property name="margin">
      <number>0</number>
     </property>
+    <property name="class" stdset="0">
+     <string>busca_local_sem_info</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="solucao_inicial">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>120</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>Solução inicial</string>
+    </property>
+    <property name="class" stdset="0">
+     <string>busca_local_com_info</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="encosta">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>170</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>Subida de Encosta</string>
+    </property>
+    <property name="class" stdset="0">
+     <string>busca_local_com_info</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="encosta_alt">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>170</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>Subida de Encosta
+Com Tentativas</string>
+    </property>
+    <property name="class" stdset="0">
+     <string>busca_local_com_info</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="tempera">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>220</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>Têmpera Simulada</string>
+    </property>
+    <property name="class" stdset="0">
+     <string>busca_local_com_info</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="tentativas">
+    <property name="geometry">
+     <rect>
+      <x>880</x>
+      <y>140</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="inputMask">
+     <string>999</string>
+    </property>
+    <property name="text">
+     <string>4</string>
+    </property>
+    <property name="maxLength">
+     <number>3</number>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="tentativas_label">
+    <property name="geometry">
+     <rect>
+      <x>800</x>
+      <y>140</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="statusTip">
+     <string>Valor de tentativas para o algoritmo de subida de encosta com tentativas.</string>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
+    </property>
+    <property name="text">
+     <string>Tentativas</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+    <property name="margin">
+     <number>0</number>
+    </property>
+    <property name="class" stdset="0">
+     <string>busca_local_com_info</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -608,7 +786,7 @@ padding: 2px;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>820</width>
+     <width>960</width>
      <height>20</height>
     </rect>
    </property>
