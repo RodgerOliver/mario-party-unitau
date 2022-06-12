@@ -40,40 +40,40 @@ class MarioParty(Ui_MarioParty):
 
     def amplitude_clicked(self):
         try:
-            self.button_clicked(busca_local_sem_info().amplitude(self.input_origem, self.input_destino),
+            self.output_busca_local_sem_info(busca_local_sem_info().amplitude(self.input_origem, self.input_destino),
                 'Amplitude')
         except BaseException as err:
             self.showError(err)
 
     def profundidade_clicked(self):
         try:
-            self.button_clicked(busca_local_sem_info().profundidade(self.input_origem, self.input_destino),
+            self.output_busca_local_sem_info(busca_local_sem_info().profundidade(self.input_origem, self.input_destino),
                 'Profundidade')
         except BaseException as err:
             self.showError(err)
 
     def profundidade_limitada_clicked(self):
         try:
-            self.button_clicked(busca_local_sem_info().prof_limitada(self.input_origem, self.input_destino, self.input_limite),
+            self.output_busca_local_sem_info(busca_local_sem_info().prof_limitada(self.input_origem, self.input_destino, self.input_limite),
                 'Profundidade Limitada')
         except BaseException as err:
             self.showError(err)
 
     def aprofundamento_interativo_clicked(self):
         try:
-            self.button_clicked(busca_local_sem_info().aprof_iterativo(self.input_origem, self.input_destino, self.input_limite),
+            self.output_busca_local_sem_info(busca_local_sem_info().aprof_iterativo(self.input_origem, self.input_destino, self.input_limite),
                 'Aprofundamento Interativo')
         except BaseException as err:
             self.showError(err)
 
     def bidirecional_clicked(self):
         try:
-            self.button_clicked(busca_local_sem_info().bidirecional(self.input_origem, self.input_destino),
+            self.output_busca_local_sem_info(busca_local_sem_info().bidirecional(self.input_origem, self.input_destino),
                 'Bidirecional')
         except BaseException as err:
             self.showError(err)
 
-    def button_clicked(self, array_solucao, tipo_solucao):
+    def output_busca_local_sem_info(self, array_solucao, tipo_solucao):
         if self.input_origem == self.input_destino:
             self.retorno.setText('A origem e o destino devem ser diferentes.')
             return
