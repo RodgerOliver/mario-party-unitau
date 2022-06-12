@@ -10,7 +10,7 @@ if __name__ == "__main__":
 
     # CONFIGURAÇÃO DO AMBIENTE
     m = busca.gerar_ambiente(N, MIN, MAX)
-    #print("\n**** Matriz Custo *****\n",m)
+    print("\n**** Matriz Custo *****\n",m)
 
     # BUSCA LOCAL
     si = busca.solucao_inicial(N)

@@ -1,6 +1,18 @@
-import libs as lib
+"""
+Fix absolute call to package
+    https://towardsdatascience.com/how-to-fix-modulenotfounderror-and-importerror-248ce5b69b1c
+    https://stackoverflow.com/questions/16981921/relative-imports-in-python-3
+"""
+import sys
+import os
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.dirname(SCRIPT_DIR))
+
+import src.libs as lib
 
 # ROTINA PARA GERAR O AMBIENTE DO PROBLEMA
+# gerar valores das arestas
 def gerar_ambiente(n, minimo, maximo):
 
     mat = lib.np.zeros((n, n), int)
