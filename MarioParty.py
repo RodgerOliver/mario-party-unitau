@@ -3,14 +3,24 @@ from PyQt5 import QtWidgets
 from Mario_Party_ui import Ui_MarioParty
 from PyQt5.QtWidgets import QMessageBox
 from src.busca_local_sem_info import busca as busca_local_sem_info
+import src.busca_local_com_info as busca_local_com_info
 
 class MarioParty(Ui_MarioParty):
+
+    GRAFO_LENG = 26 # Pontos no gráfico
+    ARESTA_MIN = 5  # Limites mínimos da rotina RANDINT
+    ARESTA_MAX = 25 # Limites máximos da rotina RANDINT
+
     def setupUi(self, MarioPartyWindow):
         Ui_MarioParty.setupUi(self, MarioPartyWindow)
         self.retorno.setText('O retorno da solução aparecerá aqui!')
         self.updateInputs()
         self.setButtonsEvents()
         self.setInputsEvents()
+
+        self.valores_arestas = busca_local_com_info.gerar_ambiente(
+            self.GRAFO_LENG, self.ARESTA_MIN, self.ARESTA_MAX)
+        print(self.valores_arestas)
 
     def showError(self, error):
         print(f"Unexpected {error=}, {type(error)=}")
@@ -24,6 +34,7 @@ class MarioParty(Ui_MarioParty):
         self.input_origem = str(self.origem.currentText())
         self.input_destino = str(self.destino.currentText())
         self.input_limite = int(self.profundidade_limite.text())
+        self.input_tentativas = int(self.tentativas.text())
 
     def setButtonsEvents(self):
         # busca local sem info
@@ -32,11 +43,14 @@ class MarioParty(Ui_MarioParty):
         self.profundidade_limitada.clicked.connect(self.profundidade_limitada_clicked)
         self.aprofundamento_interativo.clicked.connect(self.aprofundamento_interativo_clicked)
         self.bidirecional.clicked.connect(self.bidirecional_clicked)
+        # busca local com info
+        self.cacheiro_viajante.clicked.connect(self.cacheiro_viajante_clicked)
 
     def setInputsEvents(self):
         self.origem.currentTextChanged.connect(self.updateInputs)
         self.destino.currentTextChanged.connect(self.updateInputs)
         self.profundidade_limite.textChanged.connect(self.updateInputs)
+        self.tentativas.textChanged.connect(self.updateInputs)
 
     def amplitude_clicked(self):
         try:
@@ -70,6 +84,44 @@ class MarioParty(Ui_MarioParty):
         try:
             self.output_busca_local_sem_info(busca_local_sem_info().bidirecional(self.input_origem, self.input_destino),
                 'Bidirecional')
+        except BaseException as err:
+            self.showError(err)
+
+    def cacheiro_viajante_clicked(self):
+        try:
+            solucao_inicial = busca_local_com_info.solucao_inicial(self.GRAFO_LENG)
+            custo_solucao_inicial = busca_local_com_info.avalia(self.GRAFO_LENG, solucao_inicial, self.valores_arestas)
+            solucao_final, custo_encosta = busca_local_com_info.encosta(
+                self.GRAFO_LENG, solucao_inicial, custo_solucao_inicial, self.valores_arestas)
+
+            tentativas1 = int(self.input_tentativas / 2)
+            solucao_final, custo_encosta_alt1 = busca_local_com_info.encosta_alt(
+                self.GRAFO_LENG, solucao_inicial, custo_solucao_inicial, self.valores_arestas, tentativas1)
+            tentativas2 = int(self.input_tentativas * 0.1)
+            solucao_final, custo_encosta_alt2 = busca_local_com_info.encosta_alt(
+                self.GRAFO_LENG, solucao_inicial, custo_solucao_inicial, self.valores_arestas, tentativas2)
+            solucao_final, custo_encosta_alt = busca_local_com_info.encosta_alt(
+                self.GRAFO_LENG, solucao_inicial, custo_solucao_inicial, self.valores_arestas, self.input_tentativas)
+
+            temperatura_maxima = 400
+            temperatura_minima = 0.1
+            fator_redutor = 0.1
+            solucao_final, custo_tempera = busca_local_com_info.tempera(
+                self.GRAFO_LENG, solucao_inicial, custo_solucao_inicial, self.valores_arestas,
+                temperatura_maxima, temperatura_minima, fator_redutor)
+
+            retorno = 'Cacheiro Viajante (Custos):\n'
+            retorno += 'Solução inicial: ' + str(custo_solucao_inicial) + '\n'
+            retorno += 'Subida de encosta: ' + str(custo_encosta) + '\n'
+            retorno += 'Subida de encosta com ' + str(tentativas1) \
+               + ' tentativas: ' + str(custo_encosta_alt1) + '\n'
+            retorno += 'Subida de encosta com ' + str(tentativas2) \
+               + ' tentativas: ' + str(custo_encosta_alt2) + '\n'
+            retorno += 'Subida de encosta com ' + str(self.input_tentativas) \
+               + ' tentativas: ' + str(custo_encosta_alt) + '\n'
+            retorno += 'Têmpera simulada: ' + str(custo_tempera) + '\n'
+
+            self.retorno.setText(retorno)
         except BaseException as err:
             self.showError(err)
 

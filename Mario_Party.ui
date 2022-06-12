@@ -654,7 +654,7 @@ padding: 10px;</string>
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Cacheiro Viajante</string>
+     <string>Mario Viajante</string>
     </property>
     <property name="class" stdset="0">
      <string>busca_local_com_info</string>
@@ -673,7 +673,7 @@ padding: 10px;</string>
      <string>999</string>
     </property>
     <property name="text">
-     <string>4</string>
+     <string>10</string>
     </property>
     <property name="maxLength">
      <number>3</number>
