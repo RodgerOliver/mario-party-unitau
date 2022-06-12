@@ -1,8 +1,8 @@
 import sys
 from PyQt5 import QtWidgets
-from Mario_Party_ui import *
+from Mario_Party_ui import Ui_MarioParty
 from PyQt5.QtWidgets import QMessageBox
-from src.busca_local_sem_info import *
+from src.busca_local_sem_info import busca
 
 class MarioParty(Ui_MarioParty):
     def init(self, MarioPartyWindow):
