@@ -1,0 +1,3 @@
+#!/bin/bash
+
+pyuic5 Mario_Party.ui -o Mario_Party_ui.py
