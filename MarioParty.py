@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import QMessageBox
 from src.busca_local_sem_info import busca
 
 class MarioParty(Ui_MarioParty):
-    def init(self, MarioPartyWindow):
+    def setupUi(self, MarioPartyWindow):
         Ui_MarioParty.setupUi(self, MarioPartyWindow)
         self.retorno.setText('O retorno da solução aparecerá aqui!')
         self.updateInputs()
@@ -90,6 +90,6 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     MarioPartyWindow = QtWidgets.QMainWindow()
     marioPartyUi = MarioParty()
-    marioPartyUi.init(MarioPartyWindow)
+    marioPartyUi.setupUi(MarioPartyWindow)
     MarioPartyWindow.show()
     sys.exit(app.exec_())
