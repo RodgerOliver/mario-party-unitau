@@ -36,6 +36,9 @@
 	font: 75 10pt &quot;Noto Sans CJK HK&quot;;
 	color: rgb(255, 255, 255);
 }
+QPushButton.busca_local_com_info {
+	background-color: rgb(57, 143, 60);
+}
 
 QComboBox {
 	background-color: rgb(93, 211, 158);
@@ -190,9 +193,9 @@ Interativo</string>
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>280</y>
+      <y>390</y>
       <width>291</width>
-      <height>271</height>
+      <height>161</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -202,7 +205,7 @@ background-color: rgb(52, 138, 167);
 padding: 10px;</string>
     </property>
     <property name="text">
-     <string>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.</string>
+     <string>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</string>
     </property>
     <property name="wordWrap">
      <bool>true</bool>
@@ -574,8 +577,11 @@ padding: 2px;</string>
       <height>31</height>
      </rect>
     </property>
-    <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Valor do limite do algoritmo de&lt;/p&gt;&lt;p&gt;profundidade limitada e&lt;/p&gt;&lt;p&gt;aprofundamento interativo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <property name="statusTip">
+     <string>Valor do limite do algoritmo de profundidade limitada e aprofundamento interativo.</string>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
     </property>
     <property name="styleSheet">
      <string notr="true">font: 75 10pt &quot;Noto Sans CJK HK&quot;;
@@ -607,7 +613,11 @@ padding: 2px;</string>
     </rect>
    </property>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
