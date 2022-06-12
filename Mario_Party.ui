@@ -638,7 +638,7 @@ padding: 10px;</string>
      <string>busca_local_sem_info</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="solucao_inicial">
+   <widget class="QPushButton" name="cacheiro_viajante">
     <property name="geometry">
      <rect>
       <x>180</x>
@@ -654,74 +654,7 @@ padding: 10px;</string>
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Solução inicial</string>
-    </property>
-    <property name="class" stdset="0">
-     <string>busca_local_com_info</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="encosta">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>170</y>
-      <width>141</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"/>
-    </property>
-    <property name="text">
-     <string>Subida de Encosta</string>
-    </property>
-    <property name="class" stdset="0">
-     <string>busca_local_com_info</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="encosta_alt">
-    <property name="geometry">
-     <rect>
-      <x>180</x>
-      <y>170</y>
-      <width>141</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"/>
-    </property>
-    <property name="text">
-     <string>Subida de Encosta
-Com Tentativas</string>
-    </property>
-    <property name="class" stdset="0">
-     <string>busca_local_com_info</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="tempera">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>220</y>
-      <width>141</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"/>
-    </property>
-    <property name="text">
-     <string>Têmpera Simulada</string>
+     <string>Cacheiro Viajante</string>
     </property>
     <property name="class" stdset="0">
      <string>busca_local_com_info</string>
