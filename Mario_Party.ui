@@ -55,6 +55,10 @@ QLabel {
 	background-color: rgb(57, 143, 60);
 }
 
+.busca_arvore_com_pesos {
+	background-color: rgb(143, 57, 57);
+}
+
 QComboBox {
 	background-color: rgb(93, 211, 158);
 	font: 75 12pt &quot;Noto Sans CJK HK&quot;;
@@ -398,7 +402,7 @@ padding: 10px;</string>
      </rect>
     </property>
     <property name="statusTip">
-     <string>Origem para os algoritmos de busca local sem informação (botões roxos).</string>
+     <string>Origem para os algoritmos de busca local e busca em árvore.</string>
     </property>
     <property name="styleSheet">
      <string notr="true"/>
@@ -567,7 +571,7 @@ padding: 10px;</string>
      </rect>
     </property>
     <property name="statusTip">
-     <string>Destino para os algoritmos de busca local sem informação (botões roxos).</string>
+     <string>Destino para os algoritmos de busca local e busca em árvore.</string>
     </property>
     <property name="text">
      <string>Destino</string>
@@ -711,6 +715,28 @@ padding: 10px;</string>
     </property>
     <property name="class" stdset="0">
      <string>busca_local_com_info</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="busca_arvore">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>170</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>Busca em Árvore</string>
+    </property>
+    <property name="class" stdset="0">
+     <string>busca_arvore_com_pesos</string>
     </property>
    </widget>
   </widget>
