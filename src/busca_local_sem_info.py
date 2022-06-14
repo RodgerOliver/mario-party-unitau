@@ -182,7 +182,7 @@ class busca(object):
                         #print("\nÁrvore de busca:\n",l2.exibeLista())
                         return caminho
 
-        return "[]"
+        return []
 
     # BUSCA EM PROFUNDIDADE
     def profundidade(self, inicio, fim):

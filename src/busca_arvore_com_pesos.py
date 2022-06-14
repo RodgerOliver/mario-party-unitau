@@ -197,7 +197,7 @@ class busca(object):
                         linha.append(v2)
                         visitado.append(linha)
 
-        return "[]"
+        return []
 
     def greedy(self, inicio, fim):
 
@@ -248,7 +248,7 @@ class busca(object):
                         linha.append(v2)
                         visitado.append(linha)
 
-        return "[]"
+        return []
 
     def a_estrela(self, inicio, fim):
 
@@ -299,7 +299,7 @@ class busca(object):
                         linha.append(v2)
                         visitado.append(linha)
 
-        return "[]"
+        return []
 
 
 nos = ["ARAD", "BUCARESTE", "CRAIOVA", "DOBRETA", "EFORIE", "FAGARAS", "GIURGIU", "HIRSOVA", "IASI", "LUGOJ",
