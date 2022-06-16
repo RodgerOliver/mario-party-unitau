@@ -305,7 +305,6 @@ class busca(object):
 ********************************************************************
                     PROBLEMA: MAPA DA ROMÊNIA
 ********************************************************************
-"""
 
 nos = ["ARAD", "BUCARESTE", "CRAIOVA", "DOBRETA", "EFORIE", "FAGARAS", "GIURGIU", "HIRSOVA", "IASI", "LUGOJ",
        "MEHADIA", "NEAMT", "ORADEA", "PITESTI", "RIMINCU VILCEA", "SIBIU", "TIMISOARA", "URZICENI", "VASLUI",
@@ -333,6 +332,7 @@ grafo = [
     [["URZICENI", 142], ["IASI", 92]],
     [["ORADEA", 71], ["ARAD", 75]]
 ]
+"""
 
 # HEURÍSTICA SERVE SOMENTE PARA DESTINO BUCARESTE
 h = [366, 0, 160, 242, 161, 178, 77, 151, 226, 244,
@@ -342,6 +342,7 @@ h = [366, 0, 160, 242, 161, 178, 77, 151, 226, 244,
 ********************************************************************
                     PROBLEMA: MARIO PARTY
 ********************************************************************
+"""
 
 nos = [
     "A", "B", "C", "D", "E", "F", "G", "H",
@@ -379,25 +380,25 @@ grafo = [
     [["S", 40], ["C", 60], ["F", 40]]
 ]
 # HEURÍSTICA SERVE SOMENTE PARA DESTINO O
-h = [200, 160, 170, 130, 120, 100, 110, 110, 70, 70,
-     60, 20, 10, 10, 0, 150, 150, 160, 160, 120,
-     120, 80, 30, 70, 60, 130]
-"""
+h = [20.0, 17.0, 16.76305461424021, 12.747548783981962, 12.36931687685298, 10.307764064044152, 10.965856099730654, 10.63014581273465,
+     7.433034373659253, 6.726812023536855, 6.264982043070834, 3.2015621187164243, 1.5811388300841898, 2.0, 0.0, 14.230249470757707,
+     15.033296378372908, 15.508062419270823, 16.3783393541592, 12.041594578792296, 12.298373876248844, 8.246211251235321,
+     3.905124837953327, 7.0710678118654755, 6.103277807866851, 12.649110640673518
+    ]
 
 # PROGRAMA PRINCIPAL
 if __name__ == "__main__":
 
     sol = busca()
     caminho = []
+    # origem , destino = "ARAD", "BUCARESTE"
+    origem , destino = "A", "O"
 
-    caminho, custo = sol.custo_uniforme("ARAD", "BUCARESTE")
-    # caminho, custo = sol.custo_uniforme("A", "O")
+    caminho, custo = sol.custo_uniforme(origem, destino)
     print("Custo Uniforme: ", caminho[::-1], "\ncusto do caminho: ", custo)
 
-    caminho, custo = sol.greedy("ARAD", "BUCARESTE")
-    # caminho, custo = sol.greedy("A", "O")
+    caminho, custo = sol.greedy(origem, destino)
     print("\nGreedy: ", caminho[::-1], "\ncusto do caminho: ", custo)
 
-    caminho, custo = sol.a_estrela("ARAD", "BUCARESTE")
-    # caminho, custo = sol.a_estrela("A", "O")
+    caminho, custo = sol.a_estrela(origem, destino)
     print("\nA estrela: ", caminho[::-1], "\ncusto do caminho: ", custo)
