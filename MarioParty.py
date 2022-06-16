@@ -4,6 +4,7 @@ from Mario_Party_ui import Ui_MarioParty
 from PyQt5.QtWidgets import QMessageBox
 from src.busca_local_sem_info import busca as busca_local_sem_info
 import src.busca_local_com_info as busca_local_com_info
+import src.busca_arvore_com_pesos as busca_arvore_com_pesos
 
 class MarioParty(Ui_MarioParty):
 
@@ -48,6 +49,8 @@ class MarioParty(Ui_MarioParty):
         self.bidirecional.clicked.connect(self.bidirecional_clicked)
         # busca local com info
         self.cacheiro_viajante.clicked.connect(self.cacheiro_viajante_clicked)
+        # busca arvore
+        self.busca_arvore.clicked.connect(self.busca_arvore_clicked)
 
     def setInputsEvents(self):
         self.origem.currentTextChanged.connect(self.updateInputs)
@@ -129,6 +132,28 @@ class MarioParty(Ui_MarioParty):
             retorno += 'Têmpera simulada (inputs): ' + str(custo_tempera2) + '\n'
 
             self.retorno.setText(retorno)
+        except BaseException as err:
+            self.showError(err)
+
+    def busca_arvore_clicked(self):
+        try:
+
+            retorno = 'Busca Árvore:\n'
+
+            sol = busca_arvore_com_pesos.busca()
+            caminho = []
+
+            caminho, custo = sol.custo_uniforme(self.input_origem, self.input_destino)
+            retorno += "Custo Uniforme: " + ', '.join(caminho[::-1]) + "\nCusto do caminho: " + str(custo) + '\n'
+
+            caminho, custo = sol.greedy(self.input_origem, self.input_destino)
+            retorno += "Greedy: " + ', '.join(caminho[::-1]) + "\nCusto do caminho: " + str(custo) + '\n'
+
+            caminho, custo = sol.a_estrela(self.input_origem, self.input_destino)
+            retorno += "A*: " + ', '.join(caminho[::-1]) + "\nCusto do caminho: " + str(custo) + '\n'
+
+            self.retorno.setText(retorno)
+
         except BaseException as err:
             self.showError(err)
 
