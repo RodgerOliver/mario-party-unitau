@@ -17,3 +17,9 @@ cd /usr/lib/x86_64-linux-gnu/qt5/bin/
 ```sh
 pyuic5 Mario_Party.ui -o Mario_Party_ui.py
 ```
+
+### Converter PY em EXE
+
+```sh
+pyinstaller MarioParty.py
+```
