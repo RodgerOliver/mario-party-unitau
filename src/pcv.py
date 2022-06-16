@@ -40,17 +40,17 @@ if __name__ == "__main__":
     print("Custo da solução - subida de encosta com ", nt, " tentativa (5): ", vf)
     print("Ganho: ", (vi-vf)*100/vi)
 
-    sf, vf = busca.tempera(N, si, vi, m, 400, 0.1, 0.8)
+    sf, vf = busca.tempera(N, si, vi, m, 300, 0.1, 0.1)
     #print("\nTêmpera Simulada: ",sf)
     print("Custo da solução - têmpera: ", vf)
     print("Ganho: ", (vi-vf)*100/vi)
 
-    sf, vf = busca.tempera(N, si, vi, m, 400, 0.01, 0.8)
+    sf, vf = busca.tempera(N, si, vi, m, 400, 0.01, 0.05)
     #print("\nTêmpera Simulada: ",sf)
     print("Custo da solução - têmpera: ", vf)
     print("Ganho: ", (vi-vf)*100/vi)
 
-    sf, vf = busca.tempera(N, si, vi, m, 400, 0.01, 0.9)
+    sf, vf = busca.tempera(N, si, vi, m, 500, 0.01, 0.7)
     #print("\nTêmpera Simulada: ",sf)
     print("Custo da solução - têmpera: ", vf)
     print("Ganho: ", (vi-vf)*100/vi)

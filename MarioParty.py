@@ -35,6 +35,9 @@ class MarioParty(Ui_MarioParty):
         self.input_destino = str(self.destino.currentText())
         self.input_limite = int(self.profundidade_limite.text())
         self.input_tentativas = int(self.tentativas.text())
+        self.input_temperatura_maxima = int(self.temperatura_maxima.text())
+        self.input_temperatura_minima = float(self.temperatura_minima.text())
+        self.input_fator_redutor = float(self.fator_redutor.text())
 
     def setButtonsEvents(self):
         # busca local sem info
@@ -88,29 +91,36 @@ class MarioParty(Ui_MarioParty):
             self.showError(err)
 
     def cacheiro_viajante_clicked(self):
+        if self.input_origem == self.input_destino:
+            self.retorno.setText('A origem e o destino devem ser diferentes.')
+            return
+
         try:
             solucao_inicial = busca_local_com_info.solucao_inicial(self.GRAFO_LENG)
             custo_solucao_inicial = busca_local_com_info.avalia(self.GRAFO_LENG, solucao_inicial, self.valores_arestas)
-            solucao_final, custo_encosta = busca_local_com_info.encosta(
+            solucao_final_encosta, custo_encosta = busca_local_com_info.encosta(
                 self.GRAFO_LENG, solucao_inicial, custo_solucao_inicial, self.valores_arestas)
 
             tentativas1 = int(self.input_tentativas / 2)
-            solucao_final, custo_encosta_alt1 = busca_local_com_info.encosta_alt(
+            solucao_final_alt1, custo_encosta_alt1 = busca_local_com_info.encosta_alt(
                 self.GRAFO_LENG, solucao_inicial, custo_solucao_inicial, self.valores_arestas, tentativas1)
             tentativas2 = int(self.input_tentativas * 0.1)
-            solucao_final, custo_encosta_alt2 = busca_local_com_info.encosta_alt(
+            solucao_final_encosta_alt2, custo_encosta_alt2 = busca_local_com_info.encosta_alt(
                 self.GRAFO_LENG, solucao_inicial, custo_solucao_inicial, self.valores_arestas, tentativas2)
             solucao_final, custo_encosta_alt = busca_local_com_info.encosta_alt(
                 self.GRAFO_LENG, solucao_inicial, custo_solucao_inicial, self.valores_arestas, self.input_tentativas)
 
-            temperatura_maxima = 400
-            temperatura_minima = 0.1
-            fator_redutor = 0.1
-            solucao_final, custo_tempera = busca_local_com_info.tempera(
+            temperatura_maxima = 500
+            temperatura_minima = 0.01
+            fator_redutor = 0.7
+            solucao_final_tempera, custo_tempera = busca_local_com_info.tempera(
                 self.GRAFO_LENG, solucao_inicial, custo_solucao_inicial, self.valores_arestas,
                 temperatura_maxima, temperatura_minima, fator_redutor)
+            solucao_final_tempera2, custo_tempera2 = busca_local_com_info.tempera(
+                self.GRAFO_LENG, solucao_inicial, custo_solucao_inicial, self.valores_arestas,
+                self.input_temperatura_maxima, self.input_temperatura_minima, self.input_fator_redutor)
 
-            retorno = 'Cacheiro Viajante (Custos):\n'
+            retorno = 'Mario Viajante (Custos):\n'
             retorno += 'Solução inicial: ' + str(custo_solucao_inicial) + '\n'
             retorno += 'Subida de encosta: ' + str(custo_encosta) + '\n'
             retorno += 'Subida de encosta com ' + str(tentativas1) \
@@ -119,7 +129,8 @@ class MarioParty(Ui_MarioParty):
                + ' tentativas: ' + str(custo_encosta_alt2) + '\n'
             retorno += 'Subida de encosta com ' + str(self.input_tentativas) \
                + ' tentativas: ' + str(custo_encosta_alt) + '\n'
-            retorno += 'Têmpera simulada: ' + str(custo_tempera) + '\n'
+            retorno += 'Têmpera simulada (500, 0.01, 0.7): ' + str(custo_tempera) + '\n'
+            retorno += 'Têmpera simulada (inputs): ' + str(custo_tempera2) + '\n'
 
             self.retorno.setText(retorno)
         except BaseException as err:

@@ -233,9 +233,9 @@ Interativo</string>
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>390</y>
+      <y>280</y>
       <width>291</width>
-      <height>161</height>
+      <height>271</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -737,6 +737,165 @@ padding: 10px;</string>
     </property>
     <property name="class" stdset="0">
      <string>busca_arvore_com_pesos</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="temperatura_maxima">
+    <property name="geometry">
+     <rect>
+      <x>880</x>
+      <y>180</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="inputMask">
+     <string>999</string>
+    </property>
+    <property name="text">
+     <string>300</string>
+    </property>
+    <property name="maxLength">
+     <number>3</number>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="temperatura_maxima_label">
+    <property name="geometry">
+     <rect>
+      <x>800</x>
+      <y>180</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="statusTip">
+     <string>Valor de temperatura máxima para o algoritmo de têmpera simulada.</string>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
+    </property>
+    <property name="text">
+     <string>T Max</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+    <property name="margin">
+     <number>0</number>
+    </property>
+    <property name="class" stdset="0">
+     <string>busca_local_com_info</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="temparatura_minima_label">
+    <property name="geometry">
+     <rect>
+      <x>800</x>
+      <y>220</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="statusTip">
+     <string>Valor de temperatura mínima para o algoritmo de têmpera simulada.</string>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
+    </property>
+    <property name="text">
+     <string>T min</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+    <property name="margin">
+     <number>0</number>
+    </property>
+    <property name="class" stdset="0">
+     <string>busca_local_com_info</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="temperatura_minima">
+    <property name="geometry">
+     <rect>
+      <x>880</x>
+      <y>220</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="inputMask">
+     <string>9.999</string>
+    </property>
+    <property name="text">
+     <string>0.1</string>
+    </property>
+    <property name="maxLength">
+     <number>5</number>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fator_redutor_label">
+    <property name="geometry">
+     <rect>
+      <x>800</x>
+      <y>260</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="statusTip">
+     <string>Valor do fator redutor para o algoritmo de têmpera simulada.</string>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
+    </property>
+    <property name="text">
+     <string>FR</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+    <property name="margin">
+     <number>0</number>
+    </property>
+    <property name="class" stdset="0">
+     <string>busca_local_com_info</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="fator_redutor">
+    <property name="geometry">
+     <rect>
+      <x>880</x>
+      <y>260</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="inputMask">
+     <string>9.999</string>
+    </property>
+    <property name="text">
+     <string>0.1</string>
+    </property>
+    <property name="maxLength">
+     <number>5</number>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
   </widget>
