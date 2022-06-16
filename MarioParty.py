@@ -91,10 +91,6 @@ class MarioParty(Ui_MarioParty):
             self.showError(err)
 
     def cacheiro_viajante_clicked(self):
-        if self.input_origem == self.input_destino:
-            self.retorno.setText('A origem e o destino devem ser diferentes.')
-            return
-
         try:
             solucao_inicial = busca_local_com_info.solucao_inicial(self.GRAFO_LENG)
             custo_solucao_inicial = busca_local_com_info.avalia(self.GRAFO_LENG, solucao_inicial, self.valores_arestas)
